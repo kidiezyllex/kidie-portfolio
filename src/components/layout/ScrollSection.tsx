@@ -59,7 +59,7 @@ const ParallaxImages = () => {
         alt="Orbiting satellite"
         start={0}
         end={-500}
-        className="ml-12 w-full sm:ml-24 sm:w-5/12"
+        className="ml-12 w-full sm:ml-0 sm:w-5/12"
       />
     </div>
   );

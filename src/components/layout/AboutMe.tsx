@@ -69,7 +69,7 @@ export default function index(): JSX.Element {
             skills, and problem-solving abilities, building a solid foundation
             for my future development.
           </p>
-          <p className="text-justify text-xs text-muted-foreground">
+          <p className="text-justify text-xs text-muted-foreground sm:text-base">
             <span className="font-semibold text-violet-300">2020 - 2025:</span>I
             pursued a degree in Software Engineering at{' '}
             <Link href={'https://fit.iuh.edu.vn/'} target="_blank">

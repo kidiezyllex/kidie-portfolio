@@ -76,7 +76,7 @@ const ProjectCard: React.FC<CardProps> = ({
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="relative flex h-full w-[95%] origin-top flex-col rounded-md border bg-slate-900 p-4 hover:shadow-2xl hover:shadow-emerald-500/[0.1] sm:w-[70%] sm:p-10"
+        className="relative flex h-full w-[95%] origin-top flex-col rounded-md border bg-slate-900 p-4 hover:shadow-2xl hover:shadow-emerald-500/[0.1] sm:h-fit sm:w-[70%] sm:p-10"
       >
         <CardContainer className="inter-var relative z-50 my-0 h-[100%] w-full rounded-md bg-slate-950 py-0 sm:h-full">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]"></div>

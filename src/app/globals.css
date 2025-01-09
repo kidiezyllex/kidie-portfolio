@@ -55,7 +55,7 @@ body {
 }
 @layer base {
   * {
-    @apply border-border;
+    @apply select-none border-border;
   }
   body {
     @apply cursor-none overflow-x-hidden bg-background text-foreground;

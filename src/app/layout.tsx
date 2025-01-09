@@ -1,4 +1,5 @@
 'use client';
+
 import './globals.css';
 import NavBar from '@/components/layout/NavBar';
 import ScrollTextsSection from '@/components/layout/ScrollTextsSection';
@@ -13,14 +14,17 @@ import { SectionBackground } from '@/components/layout/SectionBackground';
 import { Suspense, useState, useEffect } from 'react';
 import { forceScrollTriggerRefresh } from '../../lib/utils';
 import ReactLenis from 'lenis/react';
-// import { ReactLenis } from '@studio-freight/react-lenis';
+import { useIsMobile } from '../../hook/useIsMobile';
+
 const inter = Inter({ subsets: ['latin'] });
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const [isLoading, setIsLoading] = useState(true);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,6 +46,17 @@ export default function RootLayout({
     };
   }, [isLoading]);
 
+  const MainContent = () => (
+    <main className="flex min-h-screen flex-col bg-slate-950 opacity-100">
+      {!isMobile && <Cursor />}
+      <NavBar />
+      <AuroraHero />
+      <ScrollTextsSection />
+      <SectionBackground />
+      <Footer />
+    </main>
+  );
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
@@ -56,23 +71,19 @@ export default function RootLayout({
               <div className="flex h-screen w-screen items-center justify-center overflow-hidden bg-transparent">
                 <ParticleSwarmLoader />
               </div>
+            ) : isMobile ? (
+              <MainContent />
             ) : (
-              <main className="flex min-h-screen flex-col bg-slate-950 opacity-100">
-                <ReactLenis
-                  root
-                  options={{
-                    lerp: 0.05,
-                    syncTouch: true,
-                  }}
-                >
-                  <Cursor />
-                  <NavBar />
-                  <AuroraHero />
-                  <ScrollTextsSection></ScrollTextsSection>
-                  <SectionBackground />
-                  <Footer />
-                </ReactLenis>
-              </main>
+              <ReactLenis
+                root
+                options={{
+                  lerp: 0.1,
+                  duration: 2,
+                  syncTouch: false,
+                }}
+              >
+                <MainContent />
+              </ReactLenis>
             )}
           </Suspense>
         </ThemeProvider>
