@@ -1,0 +1,136 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { Avatar, AvatarImage } from '../ui/avatar';
+import Link from 'next/link';
+import SparklesText from '../ui/sparkles-text';
+import { motion } from 'framer-motion';
+import { Home, Layers, FolderGit2, UserSearch } from 'lucide-react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import PulsatingButton from '../ui/pulsating-button';
+gsap.registerPlugin(ScrollTrigger);
+
+const navItems = [
+  { label: 'Home', icon: Home },
+  { label: 'Tech Stack', icon: Layers },
+  { label: 'My Projects', icon: FolderGit2 },
+  { label: 'About Me', icon: UserSearch },
+];
+
+export default function NavBar() {
+  const [itemIndex, setItemIndex] = useState(0);
+  const itemRef = useRef<HTMLDivElement>(null);
+  const logoTextRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const initScrollTrigger = () => {
+      const sections = gsap.utils.toArray<HTMLElement>('.section');
+
+      const triggers = sections.map((section, i) => {
+        return ScrollTrigger.create({
+          trigger: section,
+          start: 'top center',
+          onEnter: () => setItemIndex(i),
+          onLeaveBack: () => i > 0 && setItemIndex(i - 1),
+        });
+      });
+
+      return triggers;
+    };
+
+    let triggers: ScrollTrigger[] = [];
+
+    const timeoutId = setTimeout(() => {
+      triggers = initScrollTrigger();
+      ScrollTrigger.refresh();
+    }, 100);
+
+    const handleResize = () => {
+      triggers.forEach((trigger) => trigger.kill());
+      triggers = initScrollTrigger();
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', handleResize);
+      triggers.forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
+  useEffect(() => {
+    if (logoTextRef.current) {
+      if (itemIndex === 0) {
+        gsap.to(logoTextRef.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power3.out',
+        });
+      } else {
+        gsap.to(logoTextRef.current, {
+          opacity: 0,
+          y: -20,
+          duration: 0.5,
+          ease: 'power3.in',
+        });
+      }
+    }
+  }, [itemIndex]);
+
+  const renderItem = () => {
+    const { label, icon: Icon } = navItems[itemIndex];
+    return (
+      <div ref={itemRef}>
+        <PulsatingButton className="item flex cursor-none flex-row items-center gap-2 rounded-full px-4 py-1">
+          <p className="text-sm font-semibold uppercase text-violet-300">
+            {label}
+          </p>
+          <Icon className="h-4 w-4 cursor-none text-violet-300" />
+        </PulsatingButton>
+      </div>
+    );
+  };
+
+  return (
+    <div className="sticky top-0 z-[1000] flex items-center rounded-none border-none bg-transparent text-violet-200">
+      <div className="mx-auto w-full max-w-[1920px] bg-transparent px-4 py-4 xl:px-14">
+        <div className="flex flex-row items-center justify-between">
+          <Link
+            href={''}
+            className="flex flex-row items-center justify-start gap-3"
+          >
+            <motion.div
+              animate={{
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 2,
+                ease: 'linear',
+                scale: {
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                },
+              }}
+            >
+              <Avatar className="h-12 w-12">
+                <AvatarImage
+                  src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736045484/learning-webdev-blog/download_qf0dzi.jpg"
+                  alt="kidie-logo"
+                  draggable="false"
+                />
+              </Avatar>
+            </motion.div>
+            <div ref={logoTextRef}>
+              <SparklesText text="K I D I E Z Y L L E X" />
+            </div>
+          </Link>
+          {renderItem()}
+        </div>
+      </div>
+    </div>
+  );
+}
