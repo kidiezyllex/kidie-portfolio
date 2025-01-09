@@ -16,20 +16,20 @@ export default function index(): JSX.Element {
   return (
     <main className="section bg-transparent">
       <section className="mt-12 grid h-fit w-full place-content-center bg-transparent">
-        <AnimatedGradientText className="text-center text-5xl font-semibold uppercase leading-[120%] tracking-tight">
+        <AnimatedGradientText className="text-center text-2xl font-semibold uppercase leading-[120%] tracking-tight sm:text-5xl">
           Tech Stack
         </AnimatedGradientText>
       </section>
-      <section className="mt-12 grid w-full grid-cols-2 gap-14 bg-transparent px-20 text-white">
+      <section className="mt-4 grid w-full grid-cols-1 gap-4 bg-transparent px-4 sm:mt-12 sm:grid-cols-2 sm:gap-14 sm:px-20">
         <ScrollElement
           direction="left"
           viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
         >
-          <div className="flex flex-col gap-4">
-            <p className="text-start text-2xl font-semibold text-violet-300">
+          <div className="flex flex-col items-center gap-4 sm:items-start">
+            <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
               Programming Languages
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
               {teckstack1.map((image, index) => (
                 <BorderGradientIcon key={index} className="relative">
                   <Link href={image?.link} target="_blank">
@@ -52,11 +52,11 @@ export default function index(): JSX.Element {
           direction="right"
           viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
         >
-          <div className="flex flex-col gap-4">
-            <p className="text-start text-2xl font-semibold text-violet-300">
+          <div className="flex flex-col items-center gap-4 sm:items-start">
+            <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
               Frameworks/Libraries
             </p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
               {teckstack2.map((image, index) => (
                 <BorderGradientIcon key={index} className="relative">
                   <Link href={image?.link} target="_blank">
@@ -79,11 +79,11 @@ export default function index(): JSX.Element {
           direction="left"
           viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
         >
-          <div className="flex flex-col gap-4">
-            <p className="text-start text-2xl font-semibold text-violet-300">
+          <div className="flex flex-col items-center gap-4 sm:items-start">
+            <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
               Animation & UI Libraries
             </p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
               {teckstack3.map((image, index) => (
                 <BorderGradientIcon key={index} className="relative">
                   <Link href={image?.link} target="_blank">
@@ -106,11 +106,11 @@ export default function index(): JSX.Element {
           direction="right"
           viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
         >
-          <div className="flex flex-col gap-4">
-            <p className="text-start text-2xl font-semibold text-violet-300">
+          <div className="flex flex-col items-center gap-4 sm:items-start">
+            <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
               ORM & Database
             </p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
               {teckstack4.map((image, index) => (
                 <BorderGradientIcon key={index} className="relative">
                   <Link href={image?.link} target="_blank">
@@ -133,11 +133,11 @@ export default function index(): JSX.Element {
           direction="left"
           viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
         >
-          <div className="flex flex-col gap-4">
-            <p className="text-start text-2xl font-semibold text-violet-300">
+          <div className="flex flex-col items-center gap-4 sm:items-start">
+            <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
               Cloud
             </p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
               {teckstack5.map((image, index) => (
                 <BorderGradientIcon key={index} className="relative">
                   <Link href={image?.link} target="_blank">
@@ -160,11 +160,11 @@ export default function index(): JSX.Element {
           direction="right"
           viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
         >
-          <div className="flex flex-col gap-4">
-            <p className="text-start text-2xl font-semibold text-violet-300">
+          <div className="flex flex-col items-center gap-4 sm:items-start">
+            <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
               Other Tools
             </p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
               {teckstack6.map((image, index) => (
                 <BorderGradientIcon key={index} className="relative">
                   <Link href={image?.link} target="_blank">

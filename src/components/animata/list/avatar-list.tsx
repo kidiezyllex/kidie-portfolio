@@ -18,11 +18,11 @@ export default function AvatarList({
   const sizes: Record<'sm' | 'md' | 'lg', string> = {
     lg: 'm-1 size-10',
     md: 'm-1 size-9',
-    sm: 'm-1 size-8',
+    sm: 'size-6',
   };
 
   return (
-    <div className={cn('my-4 ml-4 mt-6 hidden pt-2 sm:flex', className)}>
+    <div className={cn('my-4 ml-4 mt-4 flex pt-2 sm:mt-6', className)}>
       {data.map((item) => (
         <div
           key={item.name}
@@ -37,7 +37,7 @@ export default function AvatarList({
               width={100}
               height={100}
               className={cn(
-                'cursor-none rounded-full object-cover',
+                'size-5 cursor-none rounded-full object-cover',
                 sizes[size] ?? sizes.md,
               )}
             />

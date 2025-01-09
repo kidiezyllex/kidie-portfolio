@@ -86,10 +86,10 @@ export default function NavBar() {
     return (
       <div ref={itemRef}>
         <PulsatingButton className="item flex cursor-none flex-row items-center gap-2 rounded-full px-4 py-1">
-          <p className="text-sm font-semibold uppercase text-violet-300">
+          <p className="text-xs font-semibold uppercase text-violet-300 sm:text-sm">
             {label}
           </p>
-          <Icon className="h-4 w-4 cursor-none text-violet-300" />
+          <Icon className="h-3 w-3 cursor-none text-violet-300 sm:h-4 sm:w-4" />
         </PulsatingButton>
       </div>
     );
@@ -116,7 +116,7 @@ export default function NavBar() {
                 },
               }}
             >
-              <Avatar className="h-12 w-12">
+              <Avatar className="h-8 w-8 sm:h-12 sm:w-12">
                 <AvatarImage
                   src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736045484/learning-webdev-blog/download_qf0dzi.jpg"
                   alt="kidie-logo"
@@ -125,7 +125,10 @@ export default function NavBar() {
               </Avatar>
             </motion.div>
             <div ref={logoTextRef}>
-              <SparklesText text="K I D I E Z Y L L E X" />
+              <SparklesText
+                text="K I D I E Z Y L L E X"
+                className="text-lg sm:text-xl"
+              />
             </div>
           </Link>
           {renderItem()}

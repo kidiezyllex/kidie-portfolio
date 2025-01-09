@@ -12,14 +12,6 @@ const SECTION_HEIGHT = 1000;
 export default function index(): JSX.Element {
   return (
     <div className="bg-transparent">
-      {/* <ReactLenis
-        root
-        options={{
-          lerp: 0.05,
-          //   infinite: true,
-          //   syncTouch: true,
-        }}
-      > */}
       <div
         style={{ height: `calc(${SECTION_HEIGHT}px + 170vh)` }}
         className="relative w-full"
@@ -27,7 +19,6 @@ export default function index(): JSX.Element {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]"></div>
         <ParallaxImages />
       </div>
-      {/* </ReactLenis> */}
     </div>
   );
 }
@@ -40,35 +31,35 @@ const ParallaxImages = () => {
         alt="And example of a space launch"
         start={-200}
         end={200}
-        className="w-1/3"
+        className="ml-10 w-full sm:ml-0 sm:w-1/3"
       />
       <ParallaxImg
         src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412652/learning-webdev-blog/portfolio/4_img2ii.png"
         alt="And example of a space launch"
         start={-250}
         end={-400}
-        className="ml-auto w-1/3"
+        className="ml-auto w-full sm:w-1/3"
       />
       <ParallaxImg
         src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412666/learning-webdev-blog/portfolio/2_wmtylh.png"
         alt="An example of a space launch"
         start={200}
         end={-250}
-        className="mx-auto w-2/3"
+        className="mx-auto w-full sm:w-2/3"
       />
       <ParallaxImg
         src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412659/learning-webdev-blog/portfolio/6_awbokf.png"
         alt="Orbiting satellite"
         start={-200}
         end={200}
-        className="ml-auto w-1/3"
+        className="ml-auto hidden w-full sm:block sm:w-1/3"
       />
       <ParallaxImg
         src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412652/learning-webdev-blog/portfolio/5_x7azso.png"
         alt="Orbiting satellite"
         start={0}
         end={-500}
-        className="ml-24 w-5/12"
+        className="ml-12 w-full sm:ml-24 sm:w-5/12"
       />
     </div>
   );

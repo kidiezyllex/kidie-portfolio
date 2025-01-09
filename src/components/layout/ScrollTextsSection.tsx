@@ -3,9 +3,9 @@ import ScrollBaseAnimation from '../core/text-marquee';
 
 export default function index(): JSX.Element {
   return (
-    <main className="bg-transparent">
+    <main className="h-[15rem] bg-transparent sm:h-[20rem]">
       <>
-        <section className="relative -top-40 flex h-[50vh] w-full flex-col place-content-center gap-2 bg-transparent">
+        <section className="relative top-3 flex w-full flex-col gap-2 bg-transparent sm:-top-1/3">
           <ScrollBaseAnimation
             delay={500}
             baseVelocity={-3}

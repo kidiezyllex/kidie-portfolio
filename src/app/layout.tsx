@@ -62,7 +62,6 @@ export default function RootLayout({
                   root
                   options={{
                     lerp: 0.05,
-                    // infinite: true,
                     syncTouch: true,
                   }}
                 >

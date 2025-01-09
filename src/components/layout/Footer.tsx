@@ -13,7 +13,7 @@ export default function Footer() {
 
   return (
     <div className="relative top-0 z-[1000]">
-      <WavyBackground className="flex flex-col items-center gap-8 bg-transparent">
+      <WavyBackground className="flex flex-col items-center gap-4 bg-transparent sm:gap-8">
         <div className="flex flex-row items-center justify-between">
           <Link
             href={''}
@@ -22,7 +22,7 @@ export default function Footer() {
             <div ref={logoTextRef}>
               <SparklesText
                 text="Designed and Developed by me"
-                className="text-4xl"
+                className="text-center text-xl sm:text-4xl"
               />
             </div>
             <motion.div
@@ -38,7 +38,7 @@ export default function Footer() {
                 },
               }}
             >
-              <Avatar className="h-12 w-12">
+              <Avatar className="h-8 w-8 sm:h-12 sm:w-12">
                 <AvatarImage
                   src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736045484/learning-webdev-blog/download_qf0dzi.jpg"
                   alt="kidie-logo"
@@ -48,7 +48,7 @@ export default function Footer() {
             </motion.div>
           </Link>
         </div>
-        <div className="flex flex-grow items-center gap-4 self-center">
+        <div className="flex flex-grow items-center gap-2 self-center sm:gap-4">
           <BorderGradientIcon className="relative p-0.5">
             <Link
               href={'https://www.linkedin.com/in/kidiezyllex'}
@@ -60,7 +60,7 @@ export default function Footer() {
                 width={800}
                 height={800}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="h-auto max-h-16 w-auto rounded-md bg-white object-cover p-2"
+                className="h-auto max-h-12 w-auto rounded-md bg-white object-cover p-2 sm:max-h-16"
                 priority
               />
             </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
                 width={800}
                 height={800}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="h-auto max-h-16 w-auto rounded-md bg-white object-cover p-2"
+                className="h-auto max-h-12 w-auto rounded-md bg-white object-cover p-2 sm:max-h-16"
                 priority
               />
             </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
                 width={800}
                 height={800}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="h-auto max-h-16 w-auto rounded-md bg-white object-cover p-2"
+                className="h-auto max-h-12 w-auto rounded-md bg-white object-cover p-2 sm:max-h-16"
                 priority
               />
             </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
                 width={800}
                 height={800}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="h-auto max-h-16 w-auto rounded-md bg-white object-cover p-2"
+                className="h-auto max-h-12 w-auto rounded-md bg-white object-cover p-2 sm:max-h-16"
                 priority
               />
             </Link>
@@ -120,7 +120,7 @@ export default function Footer() {
                 width={800}
                 height={800}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="h-auto max-h-16 w-auto rounded-md bg-white object-cover p-2"
+                className="h-auto max-h-12 w-auto rounded-md bg-white object-cover p-2 sm:max-h-16"
                 priority
               />
             </Link>
