@@ -13,7 +13,6 @@ import { AuroraHero } from '@/components/layout/AuroraHero';
 import { SectionBackground } from '@/components/layout/SectionBackground';
 import { Suspense, useState, useEffect } from 'react';
 import { forceScrollTriggerRefresh } from '../../lib/utils';
-import ReactLenis from 'lenis/react';
 import { useIsMobile } from '../../hook/useIsMobile';
 import LocomotiveScroll from 'locomotive-scroll';
 
@@ -26,7 +25,20 @@ export default function RootLayout({
 }>) {
   const [isLoading, setIsLoading] = useState(true);
   const isMobile = useIsMobile();
-  const scroll = new LocomotiveScroll();
+  const [locomotiveScroll, setLocomotiveScroll] =
+    useState<LocomotiveScroll | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const scroll = new LocomotiveScroll();
+      setLocomotiveScroll(scroll);
+
+      return () => {
+        scroll.destroy();
+      };
+    }
+  }, []);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       forceScrollTriggerRefresh();
@@ -75,19 +87,7 @@ export default function RootLayout({
               <div className="flex h-screen w-screen items-center justify-center overflow-hidden bg-transparent">
                 <ParticleSwarmLoader />
               </div>
-            ) : isMobile ? (
-              <MainContent />
             ) : (
-              // <ReactLenis
-              //   root
-              //   options={{
-              //     lerp: 0.1,
-              //     duration: 2,
-              //     syncTouch: false,
-              //   }}
-              // >
-              //   <MainContent />
-              // </ReactLenis>
               <MainContent />
             )}
           </Suspense>

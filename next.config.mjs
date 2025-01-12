@@ -45,7 +45,9 @@ const nextConfig = {
     images: {
       allowFutureImage: true,
     },
+    missingSuspenseWithCSRBailout: false,
   },
+  unstable_noStore: true,
 };
 
 export default nextConfig;
