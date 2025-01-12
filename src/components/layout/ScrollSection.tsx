@@ -1,4 +1,3 @@
-import ReactLenis from 'lenis/react';
 import {
   motion,
   useMotionTemplate,
@@ -8,6 +7,7 @@ import {
 import { useRef } from 'react';
 import { WobbleCard } from '../ui/wobble-card';
 import Image from 'next/image';
+import LocomotiveScroll from 'locomotive-scroll';
 const SECTION_HEIGHT = 1000;
 export default function index(): JSX.Element {
   return (
@@ -25,7 +25,7 @@ export default function index(): JSX.Element {
 
 const ParallaxImages = () => {
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
+    <div className="mx-auto max-w-5xl px-4 pt-[200px]" data-scroll-section>
       <ParallaxImg
         src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736660487/learning-webdev-blog/portfolio/1_a0lk8g.png"
         alt="Image 1"

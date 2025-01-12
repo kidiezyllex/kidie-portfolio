@@ -1,5 +1,4 @@
 'use client';
-
 import './globals.css';
 import NavBar from '@/components/layout/NavBar';
 import ScrollTextsSection from '@/components/layout/ScrollTextsSection';
@@ -43,7 +42,7 @@ export default function RootLayout({
     const timer = setTimeout(() => {
       forceScrollTriggerRefresh();
       setIsLoading(false);
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);

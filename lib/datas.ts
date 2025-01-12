@@ -344,27 +344,6 @@ export const teckstack2 = [
       'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736203610/learning-webdev-blog/portfolio/23_wxnimt.png',
     link: 'https://redux-toolkit.js.org/introduction/getting-started',
   },
-  {
-    id: 8,
-    name: 'Zod',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736414409/learning-webdev-blog/portfolio/39_ovdohd.png',
-    link: 'https://zod.dev/',
-  },
-  {
-    id: 9,
-    name: 'React Hook Form',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736414410/learning-webdev-blog/portfolio/40_xjarph.png',
-    link: 'https://react-hook-form.com/get-started',
-  },
-  {
-    id: 10,
-    name: 'NextAuth.js',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736414409/learning-webdev-blog/portfolio/37_nv6zio.png',
-    link: 'https://next-auth.js.org/',
-  },
 ];
 
 export const teckstack3 = [
@@ -388,13 +367,6 @@ export const teckstack3 = [
     imageUrl:
       'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736203610/learning-webdev-blog/portfolio/11_c99nfb.png',
     link: 'https://ui.shadcn.com/docs/components',
-  },
-  {
-    id: 4,
-    name: 'Charka UI',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736203612/learning-webdev-blog/portfolio/12_isjrqi.png',
-    link: 'https://v2.chakra-ui.com/docs/components',
   },
   {
     id: 5,
@@ -459,14 +431,6 @@ export const teckstack3 = [
       'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736220678/learning-webdev-blog/portfolio/32_euhs1l.png',
     link: 'https://motion.dev/',
   },
-  {
-    id: 14,
-    name: 'Yet Another React Lightbox',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736414409/learning-webdev-blog/portfolio/41_yt0onl.png',
-
-    link: 'https://yet-another-react-lightbox.com/',
-  },
 ];
 
 export const teckstack4 = [
@@ -492,13 +456,6 @@ export const teckstack4 = [
     link: 'https://ui.shadcn.com/docs/components',
   },
   {
-    id: 4,
-    name: 'MariaDB',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736206508/learning-webdev-blog/portfolio/29_rpzh0c.png',
-    link: 'https://v2.chakra-ui.com/docs/components',
-  },
-  {
     id: 5,
     name: 'Redis',
     imageUrl:
@@ -511,82 +468,6 @@ export const teckstack4 = [
     imageUrl:
       'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736203615/learning-webdev-blog/portfolio/21_lgi8lh.png',
     link: 'https://www.prisma.io/docs',
-  },
-];
-
-export const teckstack5 = [
-  {
-    id: 1,
-    name: 'MongoDB Atlas',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736220679/learning-webdev-blog/portfolio/38_zslpom.png',
-    link: 'https://www.mongodb.com/docs/atlas/',
-  },
-  {
-    id: 2,
-    name: 'AWS',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736220679/learning-webdev-blog/portfolio/37_lccxgc.png',
-    link: 'https://docs.aws.amazon.com/',
-  },
-  {
-    id: 3,
-    name: 'Cloudinary',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736220678/learning-webdev-blog/portfolio/33_kbvyd4.png',
-    link: 'https://cloudinary.com/documentation/programmable_media_guides',
-  },
-  {
-    id: 4,
-    name: 'Firebase',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736220678/learning-webdev-blog/portfolio/34_ahiioi.png',
-    link: 'https://firebase.google.com/docs?hl=vi',
-  },
-  {
-    id: 5,
-    name: 'Google Cloud',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736220678/learning-webdev-blog/portfolio/35_wjyani.png',
-    link: 'https://cloud.google.com/docs',
-  },
-  {
-    id: 6,
-    name: 'Neon Tech',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736220679/learning-webdev-blog/portfolio/36_z1awlg.png',
-    link: 'https://neon.tech/docs',
-  },
-];
-
-export const teckstack6 = [
-  {
-    id: 1,
-    name: 'Clerk',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736414407/learning-webdev-blog/portfolio/36_du5ftr.png',
-    link: 'https://clerk.com/docs/quickstarts/nextjs',
-  },
-  {
-    id: 2,
-    name: 'Uploadthing',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736414408/learning-webdev-blog/portfolio/38_nhr7rs.png',
-    link: 'https://docs.uploadthing.com/',
-  },
-  {
-    id: 3,
-    name: 'ZegoCloud',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736416135/learning-webdev-blog/portfolio/44_uu86io.png',
-    link: 'https://cloudinary.com/documentation/programmable_media_guides',
-  },
-  {
-    id: 4,
-    name: 'Pusher',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736416136/learning-webdev-blog/portfolio/42_qyyqzv.png',
-    link: 'https://pusher.com/docs/',
   },
 ];
 
