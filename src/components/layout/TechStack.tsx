@@ -23,7 +23,7 @@ export default function index(): JSX.Element {
       <section className="mt-4 grid w-full grid-cols-1 gap-4 bg-transparent px-4 sm:mt-12 sm:grid-cols-2 sm:gap-14 sm:px-20">
         <ScrollElement
           direction="left"
-          viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
+          viewport={{ amount: 0.2, margin: '0px 0px 0px 0px' }}
         >
           <div className="flex flex-col items-center gap-4 sm:items-start">
             <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
@@ -50,7 +50,7 @@ export default function index(): JSX.Element {
         </ScrollElement>
         <ScrollElement
           direction="right"
-          viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
+          viewport={{ amount: 0.2, margin: '0px 0px 0px 0px' }}
         >
           <div className="flex flex-col items-center gap-4 sm:items-start">
             <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
@@ -77,7 +77,7 @@ export default function index(): JSX.Element {
         </ScrollElement>
         <ScrollElement
           direction="left"
-          viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
+          viewport={{ amount: 0.2, margin: '0px 0px 0px 0px' }}
         >
           <div className="flex flex-col items-center gap-4 sm:items-start">
             <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
@@ -104,7 +104,7 @@ export default function index(): JSX.Element {
         </ScrollElement>
         <ScrollElement
           direction="right"
-          viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
+          viewport={{ amount: 0.2, margin: '0px 0px 0px 0px' }}
         >
           <div className="flex flex-col items-center gap-4 sm:items-start">
             <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
@@ -131,7 +131,7 @@ export default function index(): JSX.Element {
         </ScrollElement>
         <ScrollElement
           direction="left"
-          viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
+          viewport={{ amount: 0.2, margin: '0px 0px 0px 0px' }}
         >
           <div className="flex flex-col items-center gap-4 sm:items-start">
             <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
@@ -158,7 +158,7 @@ export default function index(): JSX.Element {
         </ScrollElement>
         <ScrollElement
           direction="right"
-          viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}
+          viewport={{ amount: 0.2, margin: '0px 0px 0px 0px' }}
         >
           <div className="flex flex-col items-center gap-4 sm:items-start">
             <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">

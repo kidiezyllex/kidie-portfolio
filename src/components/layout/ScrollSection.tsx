@@ -27,36 +27,36 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412666/learning-webdev-blog/portfolio/3_hwahbe.png"
-        alt="And example of a space launch"
+        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736660487/learning-webdev-blog/portfolio/1_a0lk8g.png"
+        alt="Image 1"
         start={-200}
         end={200}
         className="ml-10 w-full sm:ml-0 sm:w-1/3"
       />
       <ParallaxImg
-        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412652/learning-webdev-blog/portfolio/4_img2ii.png"
-        alt="And example of a space launch"
+        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736660486/learning-webdev-blog/portfolio/2_okvb5q.png"
+        alt="Image 2"
         start={-250}
         end={-400}
         className="ml-auto w-full sm:w-1/3"
       />
       <ParallaxImg
-        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412666/learning-webdev-blog/portfolio/2_wmtylh.png"
-        alt="An example of a space launch"
+        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736660484/learning-webdev-blog/portfolio/5_jhbk7y.png"
+        alt="Image 3"
         start={200}
         end={-250}
         className="mx-auto w-full sm:w-2/3"
       />
       <ParallaxImg
-        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412659/learning-webdev-blog/portfolio/6_awbokf.png"
-        alt="Orbiting satellite"
+        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736660484/learning-webdev-blog/portfolio/3_xdfvuy.png"
+        alt="Image 4"
         start={-200}
         end={200}
         className="ml-auto hidden w-full sm:block sm:w-1/3"
       />
       <ParallaxImg
-        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736412652/learning-webdev-blog/portfolio/5_x7azso.png"
-        alt="Orbiting satellite"
+        src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736660484/learning-webdev-blog/portfolio/4_fv253s.png"
+        alt="Image 5"
         start={0}
         end={-500}
         className="ml-12 w-full sm:ml-0 sm:w-5/12"

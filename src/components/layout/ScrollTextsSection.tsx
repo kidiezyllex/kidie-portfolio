@@ -7,15 +7,15 @@ export default function index(): JSX.Element {
       <>
         <section className="relative top-3 flex w-full flex-col gap-2 bg-transparent sm:-top-1/3">
           <ScrollBaseAnimation
-            delay={500}
-            baseVelocity={-3}
+            delay={1000}
+            baseVelocity={-1}
             clasname="font-bold tracking-[-0.07em] leading-[90%] text-violet-300 "
           >
             Love building website interfaces.
           </ScrollBaseAnimation>
           <ScrollBaseAnimation
-            delay={500}
-            baseVelocity={3}
+            delay={1000}
+            baseVelocity={1}
             clasname="font-bold tracking-[-0.07em] leading-[90%] text-violet-300"
           >
             Passionate about learning new technology.

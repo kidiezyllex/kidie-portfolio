@@ -23,8 +23,8 @@ const generateVariants = (
       opacity: 1,
       [axis]: 0,
       transition: {
-        duration: 0.5,
-        ease: 'easeOut',
+        duration: 0.3,
+        ease: 'easeInOut',
       },
     } as TargetAndTransition,
   };

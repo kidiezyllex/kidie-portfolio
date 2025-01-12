@@ -15,6 +15,7 @@ import { Suspense, useState, useEffect } from 'react';
 import { forceScrollTriggerRefresh } from '../../lib/utils';
 import ReactLenis from 'lenis/react';
 import { useIsMobile } from '../../hook/useIsMobile';
+import LocomotiveScroll from 'locomotive-scroll';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +26,7 @@ export default function RootLayout({
 }>) {
   const [isLoading, setIsLoading] = useState(true);
   const isMobile = useIsMobile();
-
+  const scroll = new LocomotiveScroll();
   useEffect(() => {
     const timer = setTimeout(() => {
       forceScrollTriggerRefresh();
@@ -47,7 +48,10 @@ export default function RootLayout({
   }, [isLoading]);
 
   const MainContent = () => (
-    <main className="flex min-h-screen flex-col bg-slate-950 opacity-100">
+    <main
+      className="flex min-h-screen flex-col bg-slate-950 opacity-100"
+      data-scroll-section
+    >
       {!isMobile && <Cursor />}
       <NavBar />
       <AuroraHero />
@@ -74,16 +78,17 @@ export default function RootLayout({
             ) : isMobile ? (
               <MainContent />
             ) : (
-              <ReactLenis
-                root
-                options={{
-                  lerp: 0.1,
-                  duration: 2,
-                  syncTouch: false,
-                }}
-              >
-                <MainContent />
-              </ReactLenis>
+              // <ReactLenis
+              //   root
+              //   options={{
+              //     lerp: 0.1,
+              //     duration: 2,
+              //     syncTouch: false,
+              //   }}
+              // >
+              //   <MainContent />
+              // </ReactLenis>
+              <MainContent />
             )}
           </Suspense>
         </ThemeProvider>
