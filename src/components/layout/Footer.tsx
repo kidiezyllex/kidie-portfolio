@@ -110,7 +110,7 @@ export default function Footer() {
           <BorderGradientIcon className="relative p-0.5">
             <Link
               href={
-                'https://dzhrcktg3t.ufs.sh/f/yKG0YxsXgqAJiJjnyA4IQuKy4khz7pUlSqOTNVLZvFMsGxIm'
+                'https://dzhrcktg3t.ufs.sh/f/yKG0YxsXgqAJ68fx5wkwo2C3jIVeOG6QyZ4naqUvfctiFb71'
               }
               target="_blank"
             >

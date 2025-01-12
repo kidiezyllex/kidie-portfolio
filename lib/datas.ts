@@ -456,14 +456,7 @@ export const teckstack4 = [
     link: 'https://ui.shadcn.com/docs/components',
   },
   {
-    id: 5,
-    name: 'Redis',
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736206503/learning-webdev-blog/portfolio/30_pexaxc.png',
-    link: 'https://mui.com/material-ui/getting-started/',
-  },
-  {
-    id: 6,
+    id: 4,
     name: 'Prisma',
     imageUrl:
       'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736203615/learning-webdev-blog/portfolio/21_lgi8lh.png',
