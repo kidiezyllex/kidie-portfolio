@@ -20,7 +20,7 @@ export default function index(): JSX.Element {
           Tech Stack
         </AnimatedGradientText>
       </section>
-      <section className="mt-4 grid w-full grid-cols-1 gap-4 bg-transparent px-4 sm:mt-12 sm:grid-cols-2 sm:gap-14 sm:px-20">
+      <section className="mt-4 grid w-full grid-cols-1 gap-4 bg-transparent px-4 sm:mt-12 sm:grid-cols-2 sm:gap-14 lg:px-16 xl:px-20">
         <ScrollElement
           direction="left"
           viewport={{ amount: 0.2, margin: '0px 0px 0px 0px' }}

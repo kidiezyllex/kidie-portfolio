@@ -19,13 +19,13 @@ export default function ProjectsPage(): JSX.Element {
   });
 
   return (
-    <main className="section -mt-8 bg-transparent sm:mt-0" ref={containerRef}>
-      <section className="grid h-fit w-full place-content-center bg-transparent sm:mb-0 sm:mt-12">
-        <AnimatedGradientText className="text-center text-2xl font-semibold uppercase leading-[120%] tracking-tight sm:text-5xl">
+    <main className="section -mt-8 bg-transparent lg:mt-0" ref={containerRef}>
+      <section className="grid h-fit w-full place-content-center bg-transparent lg:mb-0 lg:mt-12">
+        <AnimatedGradientText className="text-center text-2xl font-semibold uppercase leading-[120%] tracking-tight lg:text-5xl">
           MY PROJECTS
         </AnimatedGradientText>
       </section>
-      <section className="mt-16 w-full bg-transparent sm:mt-0">
+      <section className="mt-16 w-full bg-transparent lg:mt-0">
         {mockBlogPosts.map((project, i) => {
           const targetScale = 1 - (mockBlogPosts.length - i) * 0.05;
           return (
@@ -69,38 +69,38 @@ const ProjectCard: React.FC<CardProps> = ({
   return (
     <div
       ref={containerRef}
-      className="sticky top-0 flex items-center justify-center sm:h-screen"
+      className="sticky top-0 flex items-center justify-center lg:h-screen"
     >
       <motion.div
         style={{
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="relative flex h-full w-[95%] origin-top flex-col rounded-md border bg-slate-900 p-4 hover:shadow-2xl hover:shadow-emerald-500/[0.1] sm:h-fit sm:w-[70%] sm:p-10"
+        className="relative flex h-full w-[95%] origin-top flex-col rounded-md border bg-slate-900 p-4 hover:shadow-2xl hover:shadow-emerald-500/[0.1] lg:h-fit lg:w-[70%] lg:p-10"
       >
-        <CardContainer className="inter-var relative z-50 my-0 h-[100%] w-full rounded-md bg-slate-950 py-0 sm:h-full">
+        <CardContainer className="inter-var relative z-50 my-0 h-[100%] w-full rounded-md bg-slate-950 py-0 lg:h-full">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-          <CardBody className="group/card pointer-events-auto relative z-50 m-0 grid h-fit w-[100%] grid-cols-1 gap-4 rounded-xl border border-white/[0.2] bg-transparent p-2 hover:shadow-2xl hover:shadow-emerald-500/[0.1] sm:grid-cols-2 sm:gap-10 sm:p-6 sm:py-14">
-            <div className="flex flex-col items-center sm:items-start">
-              <div className="flex flex-col items-start gap-2 sm:flex-row sm:gap-4">
+          <CardBody className="group/card pointer-events-auto relative z-50 m-0 grid h-fit w-[100%] grid-cols-1 gap-4 rounded-xl border border-white/[0.2] bg-transparent p-2 hover:shadow-2xl hover:shadow-emerald-500/[0.1] lg:grid-cols-2 lg:gap-10 lg:p-6 lg:py-14">
+            <div className="flex flex-col items-center lg:items-start">
+              <div className="flex flex-col items-start gap-2 lg:flex-row lg:gap-4">
                 <Image
                   src={logoUrl}
                   height={1000}
                   width={1000}
-                  className="h-24 w-24 flex-shrink-0 self-center rounded-md object-cover sm:self-start"
+                  className="h-24 w-24 flex-shrink-0 self-center rounded-md object-cover lg:self-start"
                   alt="logo"
                 />
-                <div className="flex flex-col items-center gap-2 sm:items-start">
-                  <p className="break-words text-center text-xl font-semibold text-violet-300 sm:text-start sm:text-2xl">
+                <div className="flex flex-col items-center gap-2 lg:items-start">
+                  <p className="break-words text-center text-xl font-semibold text-violet-300 lg:text-start lg:text-2xl">
                     {title}
                   </p>
-                  <p className="w-full break-words text-center text-sm text-muted-foreground sm:text-start">
+                  <p className="w-full break-words text-center text-sm text-muted-foreground lg:text-start">
                     {description}
                   </p>
                 </div>
               </div>
               <AvatarList data={data} />
-              <div className="flex items-center gap-2 sm:gap-4">
+              <div className="flex items-center gap-2 lg:gap-4">
                 <Link href={src} target="_blank">
                   <HoverBorderGradient
                     containerClassName="rounded-full"
@@ -109,10 +109,12 @@ const ProjectCard: React.FC<CardProps> = ({
                   >
                     <Github className="h-4 w-4 cursor-none text-violet-300" />
                     <p className="cursor-none text-nowrap text-sm font-semibold text-violet-300">
-                      <span className="hidden sm:block">
+                      <span className="hidden text-nowrap xl:block">
                         Source Code & Demo Video
                       </span>
-                      <span className="block sm:hidden">Source</span>
+                      <span className="block text-nowrap xl:hidden">
+                        Source
+                      </span>
                     </p>
                   </HoverBorderGradient>
                 </Link>
