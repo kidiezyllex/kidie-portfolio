@@ -1,54 +1,43 @@
-'use client';
-import './globals.css';
-import NavBar from '@/components/layout/NavBar';
-import ScrollTextsSection from '@/components/layout/ScrollTextsSection';
-import Cursor from '@/components/custom-cursor/Cursor';
-import Footer from '@/components/layout/Footer';
-import Loading from './loading';
-import ParticleSwarmLoader from '@/components/custom-loader/ParticleSwarmLoader';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import { AuroraHero } from '@/components/layout/AuroraHero';
-import { SectionBackground } from '@/components/layout/SectionBackground';
-import { Suspense, useState, useEffect } from 'react';
-import { forceScrollTriggerRefresh } from '../../lib/utils';
-import { useIsMobile } from '../../hook/useIsMobile';
-import LocomotiveScroll from 'locomotive-scroll';
+"use client"
+import "./globals.css"
+import NavBar from "@/components/layout/NavBar"
+import Cursor from "@/components/custom-cursor/Cursor"
+import Footer from "@/components/layout/Footer"
+import Loading from "./loading"
+import ParticleSwarmLoader from "@/components/custom-loader/ParticleSwarmLoader"
+import { Exo_2 } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
+import { AuroraHero } from "@/components/layout/AuroraHero"
+import { SectionBackground } from "@/components/layout/SectionBackground"
+import { Suspense, useState, useEffect } from "react"
+import { forceScrollTriggerRefresh } from "../../lib/utils"
+import { useIsMobile } from "../../hook/useIsMobile"
+import type LocomotiveScroll from "locomotive-scroll"
+import ScrollTextsSection from "@/components/layout/ScrollTextsSection"
+import type React from "react" // Added import for React
 
-const inter = Inter({ subsets: ['latin'] });
+const exo2 = Exo_2({ subsets: ["latin"] })
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  const [isLoading, setIsLoading] = useState(true);
-  const isMobile = useIsMobile();
-  const [locomotiveScroll, setLocomotiveScroll] =
-    useState<LocomotiveScroll | null>(null);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const scroll = new LocomotiveScroll();
-      setLocomotiveScroll(scroll);
-
-      return () => {
-        scroll.destroy();
-      };
-    }
-  }, []);
+  const [loaderVisible, setLoaderVisible] = useState(true)
+  const isMobile = useIsMobile()
+  const [locomotiveScroll, setLocomotiveScroll] = useState<LocomotiveScroll | null>(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      forceScrollTriggerRefresh();
-      setIsLoading(false);
-    }, 1000);
+      forceScrollTriggerRefresh()
+      setLoaderVisible(false)
+    }, 5000)
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
-    if (isLoading) {
+    if (loaderVisible) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -56,13 +45,11 @@ export default function RootLayout({
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isLoading]);
+  }, [loaderVisible]);
 
   const MainContent = () => (
-    <main
-      className="flex min-h-screen flex-col bg-slate-950 opacity-100"
-      data-scroll-section
-    >
+    <main className={`flex min-h-screen flex-col bg-slate-950 ${loaderVisible ? "opacity-0" : "opacity-100"
+      }`}>
       {!isMobile && <Cursor />}
       <NavBar />
       <AuroraHero />
@@ -70,28 +57,26 @@ export default function RootLayout({
       <SectionBackground />
       <Footer />
     </main>
-  );
+  )
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body className={exo2.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={<Loading />}>
-            {isLoading ? (
-              <div className="flex h-screen w-screen items-center justify-center overflow-hidden bg-transparent">
+            <div className="relative">
+              <div
+                className={`fixed inset-0 z-50 flex items-center justify-center bg-transparent duration-500 ${loaderVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+                  }`}
+              >
                 <ParticleSwarmLoader />
               </div>
-            ) : (
               <MainContent />
-            )}
+            </div>
           </Suspense>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
+

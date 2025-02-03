@@ -11,25 +11,23 @@ export default function Introduction() {
       <div className="flex flex-col items-center gap-1 sm:items-start sm:gap-4">
         <h1 className="flex items-center gap-2 text-xl font-bold sm:text-3xl">
           <span className="font-normal">( =^w^= )</span>
-          Hello
-          <span className="animate-wave">👋</span>
+          Hello 👋
         </h1>
-        <h2 className="bg-gradient-to-r from-violet-500 via-violet-300 to-violet-500 bg-clip-text text-2xl font-bold text-transparent sm:text-5xl">
-          I am{' '}
+        <div className="flex items-center gap-4">
+          <p className='text-violet-300 text-2xl font-bold sm:text-5xl'>I'm{" "}</p>
           <Link
             href={'/'}
             onClick={(e) => e.preventDefault()}
-            className="relative z-[10000] text-nowrap bg-gradient-to-r from-violet-500 via-violet-300 to-violet-500 bg-clip-text font-bold md:text-3xl lg:text-5xl"
+            className="relative z-[10000] text-nowrap bg-gradient-to-r from-violet-500 via-violet-300 to-violet-500 bg-clip-text font-bold md:text-3xl sm:text-5xl md:leading-9 lg:text-[55px] lg:leading-[48px] hover:shadow-violet-500/[0.1]"
           >
             BUI TRAN THIEN AN
           </Link>
-        </h2>
-        <TypingText
+        </div>
+        {/* <TypingText
           className="text-nowrap md:text-xl lg:text-2xl xl:text-3xl"
           text={'A web developer passionate about design.'}
-        ></TypingText>
-
-        <div className="flex cursor-none gap-4 pt-0 sm:pt-4">
+        ></TypingText> */}
+        <div className="cursor-none flex gap-4 sm:my-4  py-2">
           <Link
             href={'https://www.linkedin.com/in/kidiezyllex'}
             target="_blank"
@@ -42,7 +40,7 @@ export default function Introduction() {
           <Link
             href={'https://github.com/kidiezyllex'}
             target="_blank"
-            className="cursor-none"
+            className="cursor-none transform -translate-y-2"
           >
             <BorderGradientRoundedButton className="cursor-none bg-slate-950 text-violet-300">
               <Github className="h-5 w-5 cursor-none text-violet-300 sm:h-7 sm:w-7" />
@@ -60,17 +58,15 @@ export default function Introduction() {
           <Link
             href={'https://www.instagram.com/kidiezyllusc'}
             target="_blank"
-            className="cursor-none"
+            className="cursor-none transform -translate-y-2"
           >
             <BorderGradientRoundedButton className="cursor-none bg-slate-950 text-violet-300">
               <Instagram className="h-5 w-5 cursor-none text-violet-300 sm:h-7 sm:w-7" />
             </BorderGradientRoundedButton>
           </Link>
         </div>
-        <div className="flex items-stretch gap-4 pt-4 sm:pt-6">
-          <RoundedSlideButton></RoundedSlideButton>
-        </div>
+        <RoundedSlideButton></RoundedSlideButton>
       </div>
-    </div>
+    </div >
   );
 }

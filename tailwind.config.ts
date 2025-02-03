@@ -161,6 +161,23 @@ export default {
             boxShadow: '0 0 0 6px var(--pulse-color)',
           },
         },
+        rippling: {
+          '0%': {
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'scale(2)',
+            opacity: '0',
+          },
+        },
+        'hover-pulse': {
+          '0%': {
+            boxShadow: '0 0 0 0 rgba(255, 0, 0, 0.7)',
+          },
+          '100%': {
+            boxShadow: '0 0 0 2em rgba(255, 0, 0, 0)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -172,6 +189,8 @@ export default {
         marquee: 'marquee var(--duration) linear infinite',
         'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
         pulse: 'pulse var(--duration) ease-out infinite',
+        rippling: 'rippling var(--duration) ease-out',
+        'hover-pulse': 'hover-pulse 1s ease-in-out',
       },
     },
   },

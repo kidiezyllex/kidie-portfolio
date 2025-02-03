@@ -103,27 +103,13 @@ export default function NavBar() {
             href={''}
             className="flex flex-row items-center justify-start gap-3"
           >
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 2,
-                ease: 'linear',
-                scale: {
-                  repeat: Infinity,
-                  repeatType: 'reverse',
-                },
-              }}
-            >
-              <Avatar className="h-8 w-8 sm:h-12 sm:w-12">
-                <AvatarImage
-                  src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736045484/learning-webdev-blog/download_qf0dzi.jpg"
-                  alt="kidie-logo"
-                  draggable="false"
-                />
-              </Avatar>
-            </motion.div>
+            <Avatar className="h-8 w-8 sm:h-12 sm:w-12">
+              <AvatarImage
+                src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736045484/learning-webdev-blog/download_qf0dzi.jpg"
+                alt="kidie-logo"
+                draggable="false"
+              />
+            </Avatar>
             <div ref={logoTextRef}>
               <SparklesText
                 text="K I D I E Z Y L L E X"

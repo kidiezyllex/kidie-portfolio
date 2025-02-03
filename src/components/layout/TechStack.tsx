@@ -1,5 +1,4 @@
 'use client';
-import AnimatedGradientText from '../animata/text/animated-gradient-text';
 import Image from 'next/image';
 import {
   teckstack1,
@@ -9,13 +8,14 @@ import {
 } from '../../../lib/datas';
 import { BorderGradientIcon } from '../ui/border-gradient-icon';
 import Link from 'next/link';
+import { useState } from 'react';
+import HoverButton from '../ui/hover-button';
+import { Layers } from 'lucide-react';
 export default function index(): JSX.Element {
   return (
     <main className="section bg-transparent">
       <section className="mt-12 grid h-fit w-full place-content-center bg-transparent">
-        <AnimatedGradientText className="text-center text-2xl font-semibold uppercase leading-[120%] tracking-tight sm:text-5xl">
-          Tech Stack
-        </AnimatedGradientText>
+        <HoverButton icon={Layers} text={'TECH STACK'}></HoverButton>
       </section>
       <section className="mt-4 grid w-full grid-cols-1 gap-4 bg-transparent px-4 sm:mt-12 sm:grid-cols-2 sm:gap-14 md:px-12 lg:px-16 xl:px-20">
         <div className="flex flex-col items-center gap-4 sm:items-start">

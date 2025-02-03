@@ -11,6 +11,8 @@ import {
 import Image from 'next/image';
 import Introduction from './Introduction';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import Link from 'next/link';
 const Scene = dynamic(() => import('@/components/Scene'), { ssr: false });
 
 const COLORS_TOP = ['#09090B', '#8B5CF6', '#5B21B6', '#7E22CE'];
@@ -40,20 +42,27 @@ export const AuroraHero = () => {
           <Scene />
         </div> */}
         <Introduction></Introduction>
-        <div className="relative z-50 hidden h-full w-[50%] md:block">
-          <Image
-            src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736047384/learning-webdev-blog/clinic/1736047246699_gbngi9.png"
-            alt="hero-image"
-            className="absolute bottom-0 left-5 h-auto w-[100%] object-cover"
-            width={700}
-            height={700}
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-            draggable="false"
-          />
-        </div>
+        <>
+          <Head>
+            <Link
+              rel="preload"
+              href={"/hero.png"}
+              as="image"
+            />
+          </Head>
+          <div className="relative z-50 hidden h-full w-[50%] md:block">
+            <Image
+              src="/hero.png"
+              alt="hero-image"
+              className="absolute bottom-0 left-5 object-cover"
+              width={700} // Kích thước cố định để tránh layout shift
+              height={700}
+              draggable="false"
+              quality={100}
+              loading="eager"
+            />
+          </div>
+        </>
       </div>
       <div className="absolute inset-0 bottom-0 left-0 top-0 z-0 h-screen min-h-screen">
         <Canvas>

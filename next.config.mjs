@@ -42,12 +42,8 @@ const nextConfig = {
     formats: ['image/webp'],
   },
   experimental: {
-    images: {
-      allowFutureImage: true,
-    },
     missingSuspenseWithCSRBailout: false,
   },
-  unstable_noStore: true,
 };
 
 export default nextConfig;
