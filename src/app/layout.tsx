@@ -8,7 +8,7 @@ import ParticleSwarmLoader from "@/components/custom-loader/ParticleSwarmLoader"
 import { Exo_2 } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { AuroraHero } from "@/components/layout/AuroraHero"
-import { SectionBackground } from "@/components/layout/SectionBackground"
+import { GridBackgroundSection } from "@/components/layout/GridBackgroundSection"
 import { Suspense, useState, useEffect } from "react"
 import { forceScrollTriggerRefresh } from "../../lib/utils"
 import { useIsMobile } from "../../hook/useIsMobile"
@@ -54,8 +54,8 @@ export default function RootLayout({
       <NavBar />
       <AuroraHero />
       <ScrollTextsSection />
-      <SectionBackground />
-      <Footer />
+      <GridBackgroundSection />
+      {/* <Footer /> */}
     </main>
   )
 

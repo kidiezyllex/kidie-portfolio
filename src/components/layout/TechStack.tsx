@@ -1,115 +1,103 @@
-'use client';
-import Image from 'next/image';
-import {
-  teckstack1,
-  teckstack2,
-  teckstack3,
-  teckstack4,
-} from '../../../lib/datas';
-import { BorderGradientIcon } from '../ui/border-gradient-icon';
-import Link from 'next/link';
-import { useState } from 'react';
-import HoverButton from '../ui/hover-button';
-import { Layers } from 'lucide-react';
-export default function index(): JSX.Element {
+"use client"
+import { teckstack1, teckstack2, teckstack3, teckstack4, teckstack5, teckstack6 } from "../../../lib/datas"
+import { useEffect, useRef } from "react"
+import HoverButton from "../ui/hover-button"
+import { Layers } from "lucide-react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { HoverEffect } from "../ui/card-hover-effect"
+gsap.registerPlugin(ScrollTrigger)
+export default function TechStack(): JSX.Element {
+  const containerRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+    const sections = gsap.utils.toArray<HTMLElement>(".panel")
+    const tl = gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        end: () => `+=${(container as HTMLElement).offsetWidth}`,
+      },
+    })
+
+    return () => {
+      tl.scrollTrigger?.kill()
+    }
+  }, [])
+
   return (
     <main className="section bg-transparent">
-      <section className="mt-12 grid h-fit w-full place-content-center bg-transparent">
-        <HoverButton icon={Layers} text={'TECH STACK'}></HoverButton>
-      </section>
-      <section className="mt-4 grid w-full grid-cols-1 gap-4 bg-transparent px-4 sm:mt-12 sm:grid-cols-2 sm:gap-14 md:px-12 lg:px-16 xl:px-20">
-        <div className="flex flex-col items-center gap-4 sm:items-start">
-          <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
-            Programming Languages
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-            {teckstack1.map((image, index) => (
-              <BorderGradientIcon key={index} className="relative">
-                <Link href={image?.link} target="_blank">
-                  <Image
-                    src={image?.imageUrl}
-                    alt="Message Image"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    className="h-full max-h-16 w-auto rounded-md object-cover"
-                    loading="lazy"
-                    blurDataURL={image?.imageUrl}
-                  />
-                </Link>
-              </BorderGradientIcon>
-            ))}
+      <div ref={containerRef} className="flex w-[400%] h-screen">
+        <div className="panel w-screen h-full flex flex-col items-center gap-4 sm:items-start">
+          <div className="mt-16 grid h-fit w-full place-content-center bg-transparent">
+            <HoverButton icon={Layers} text={"TECH STACK"}></HoverButton>
+          </div>
+          <div className="w-full grid grid-cols-2 gap-4 items-start justify-center mt-10">
+            <div className="flex flex-col">
+              <p className="w-full text-center text-xl font-semibold text-violet-300 sm:text-2xl">
+                Programming Languages
+              </p>
+              <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
+                <HoverEffect items={teckstack1} />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <p className="w-full text-center text-xl font-semibold text-violet-300 sm:text-2xl">
+                Frameworks/Libraries
+              </p>
+              <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
+                <HoverEffect items={teckstack2} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 sm:items-start">
-          <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
-            Frameworks/Libraries
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-            {teckstack2.map((image, index) => (
-              <BorderGradientIcon key={index} className="relative">
-                <Link href={image?.link} target="_blank">
-                  <Image
-                    src={image?.imageUrl}
-                    alt="Message Image"
-                    width={64}
-                    height={64}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="h-auto max-h-16 w-auto rounded-md object-cover"
-                    loading="lazy"
-                    blurDataURL={image?.imageUrl}
-                  />
-                </Link>
-              </BorderGradientIcon>
-            ))}
+        <div className="panel w-screen h-full flex flex-col items-center gap-4 sm:items-start">
+          <div className="mt-16 grid h-fit w-full place-content-center bg-transparent">
+            <HoverButton icon={Layers} text={"TECH STACK"}></HoverButton>
+          </div>
+          <div className="w-full grid grid-cols-2 gap-4 items-start justify-center mt-10">
+            <div className="flex flex-col">
+              <p className="w-full text-center text-xl font-semibold text-violet-300 sm:text-2xl">
+                Animation & UI Libraries
+              </p>
+              <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
+                <HoverEffect items={teckstack3} />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <p className="w-full text-center text-xl font-semibold text-violet-300 sm:text-2xl">ORM & Database</p>
+              <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
+                <HoverEffect items={teckstack4} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 sm:items-start">
-          <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
-            Animation & UI Libraries
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-            {teckstack3.map((image, index) => (
-              <BorderGradientIcon key={index} className="relative">
-                <Link href={image?.link} target="_blank">
-                  <Image
-                    src={image?.imageUrl}
-                    alt="Message Image"
-                    width={64}
-                    height={64}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="h-auto max-h-16 w-auto rounded-md object-cover"
-                    loading="lazy"
-                    blurDataURL={image?.imageUrl}
-                  />
-                </Link>
-              </BorderGradientIcon>
-            ))}
+        <div className="panel w-screen h-full flex flex-col items-center gap-4 sm:items-start">
+          <div className="mt-16 grid h-fit w-full place-content-center bg-transparent">
+            <HoverButton icon={Layers} text={"TECH STACK"}></HoverButton>
+          </div>
+          <div className="w-full grid grid-cols-2 gap-4 items-start justify-center mt-10">
+            <div className="flex flex-col">
+              <p className="w-full text-center text-xl font-semibold text-violet-300 sm:text-2xl">Cloud</p>
+              <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
+                <HoverEffect items={teckstack5} />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <p className="w-full text-center text-xl font-semibold text-violet-300 sm:text-2xl">Other Tools</p>
+              <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
+                <HoverEffect items={teckstack6} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 sm:items-start">
-          <p className="text-start text-xl font-semibold text-violet-300 sm:text-2xl">
-            ORM & Database
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-            {teckstack4.map((image, index) => (
-              <BorderGradientIcon key={index} className="relative">
-                <Link href={image?.link} target="_blank">
-                  <Image
-                    src={image?.imageUrl}
-                    alt="Message Image"
-                    width={64}
-                    height={64}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="h-auto max-h-16 w-auto rounded-md object-cover"
-                    loading="lazy"
-                  />
-                </Link>
-              </BorderGradientIcon>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
-  );
+  )
 }
+

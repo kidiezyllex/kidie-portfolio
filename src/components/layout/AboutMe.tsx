@@ -8,6 +8,8 @@ import Image from 'next/image';
 import { BorderGradientIcon } from '../ui/border-gradient-icon';
 const firstRow = instaPosts.slice(0, instaPosts.length / 2);
 const secondRow = instaPosts.slice(instaPosts.length / 2);
+// Cho phần ảnh IG
+// https://ui.aceternity.com/components/animated-testimonials
 export default function index(): JSX.Element {
   return (
     <main className="section bg-transparent">

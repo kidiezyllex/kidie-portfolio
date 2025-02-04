@@ -27,11 +27,11 @@ export default function Introduction() {
           className="text-nowrap md:text-xl lg:text-2xl xl:text-3xl"
           text={'A web developer passionate about design.'}
         ></TypingText> */}
-        <div className="cursor-none flex gap-4 sm:my-4  py-2">
+        <div className="cursor-none flex gap-4 sm:my-4">
           <Link
             href={'https://www.linkedin.com/in/kidiezyllex'}
             target="_blank"
-            className="cursor-none"
+            className="cursor-none transform duration-200 hover:-translate-y-2"
           >
             <BorderGradientRoundedButton className="cursor-none">
               <Linkedin className="h-5 w-5 cursor-none text-indigo-950 sm:h-7 sm:w-7" />
@@ -40,7 +40,7 @@ export default function Introduction() {
           <Link
             href={'https://github.com/kidiezyllex'}
             target="_blank"
-            className="cursor-none transform -translate-y-2"
+            className="cursor-none transform duration-200 hover:-translate-y-2"
           >
             <BorderGradientRoundedButton className="cursor-none bg-slate-950 text-violet-300">
               <Github className="h-5 w-5 cursor-none text-violet-300 sm:h-7 sm:w-7" />
@@ -49,7 +49,7 @@ export default function Introduction() {
           <Link
             href={'https://www.facebook.com/zyllusc'}
             target="_blank"
-            className="cursor-none"
+            className="cursor-none transform duration-200 hover:-translate-y-2"
           >
             <BorderGradientRoundedButton className="cursor-none">
               <Facebook className="h-5 w-5 cursor-none text-indigo-950 sm:h-7 sm:w-7" />
@@ -58,7 +58,7 @@ export default function Introduction() {
           <Link
             href={'https://www.instagram.com/kidiezyllusc'}
             target="_blank"
-            className="cursor-none transform -translate-y-2"
+            className="cursor-none transform duration-200 hover:-translate-y-2"
           >
             <BorderGradientRoundedButton className="cursor-none bg-slate-950 text-violet-300">
               <Instagram className="h-5 w-5 cursor-none text-violet-300 sm:h-7 sm:w-7" />
