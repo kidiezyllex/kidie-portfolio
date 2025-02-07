@@ -8,28 +8,33 @@ import Link from 'next/link';
 export default function Introduction() {
   return (
     <div className="w-[100%] flex-grow-0 self-start px-0 pl-4 pt-0 text-violet-300 sm:self-center sm:pt-10 md:w-[50%] xl:pl-16">
-      <div className="flex flex-col items-center gap-1 sm:items-start sm:gap-4">
-        <h1 className="flex items-center gap-2 text-xl font-bold sm:text-3xl">
+      <div className="flex flex-col items-center gap-2 sm:items-start sm:gap-4">
+        <h1 className="flex items-center gap-2 text-3xl font-bold">
           <span className="font-normal">( =^w^= )</span>
           Hello 👋
         </h1>
-        <div className="flex items-center gap-4">
-          <p className='text-violet-300 text-2xl font-bold sm:text-5xl'>I'm{" "}</p>
+        <div className="flex items-center gap-2 sm:gap-4">
+          <p className='text-violet-300 font-bold text-3xl sm:text-5xl'>I'm{" "}</p>
           <Link
             href={"/"}
             onClick={(e) => e.preventDefault()}
-            className="relative z-[10000] text-nowrap bg-gradient-to-r text-violet-300 font-bold tracking-tighter md:text-3xl sm:text-4xl md:leading-9 lg:text-[55px] lg:leading-[48px] hover:shadow-violet-500/[0.1] font-[Verdana,Geneva,Tahoma,sans-serif]"
+            className="relative z-[10000] text-nowrap bg-gradient-to-r text-violet-300 font-bold tracking-tighter md:leading-9 lg:text-[55px] lg:leading-[48px] hover:shadow-violet-500/[0.1] font-[Verdana,Geneva,Tahoma,sans-serif] 
+            text-3xl
+            sm:text-4xl
+            "
           >
             Bui Tran Thien An
           </Link>
-
         </div>
         <p
           className="sm:text-4xl font-bold font-[Verdana,Geneva,Tahoma,sans-serif] tracking-[-0.07em] leading-[90%] text-violet-300"
         >
-          a <span className='text-[#F5A5A7]'>front-end</span> developer
+          a <Link
+            href={"/"}
+            onClick={(e) => e.preventDefault()}
+            className='text-[#F5A5A7]'>front-end</Link> developer
         </p>
-        <div className="cursor-none flex gap-4 sm:my-4">
+        <div className="cursor-none flex gap-4 my-2 sm:my-4">
           <Link
             href={'https://www.linkedin.com/in/kidiezyllex'}
             target="_blank"

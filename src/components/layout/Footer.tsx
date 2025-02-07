@@ -16,7 +16,6 @@ export default function Footer() {
         width={800}
         height={800}
         className='w-full h-full absolute z-0 object-cover'
-
       />
       <div className="absolute top-0 left-12 flex flex-col items-center justify-center gap-4 sm:gap-6">
         <div className="flex flex-row items-center justify-between">

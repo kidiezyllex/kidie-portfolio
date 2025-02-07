@@ -1,7 +1,4 @@
 'use client';
-import AnimatedGradientText from '../animata/text/animated-gradient-text';
-import Marquee from '../core/marquee';
-import { InstagramCard } from '../card/InstagramCard';
 import { instaPosts } from '../../../lib/datas';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,10 +6,6 @@ import { BorderGradientIcon } from '../ui/border-gradient-icon';
 import HoverButton from '../ui/hover-button';
 import { UserSearch } from 'lucide-react';
 import { AnimatedTestimonials } from '../ui/animated-testimonials';
-const firstRow = instaPosts.slice(0, instaPosts.length / 2);
-const secondRow = instaPosts.slice(instaPosts.length / 2);
-// Cho phần ảnh IG
-// https://ui.aceternity.com/components/animated-testimonials
 export default function index(): JSX.Element {
   return (
     <main className="section bg-transparent">
@@ -21,40 +14,6 @@ export default function index(): JSX.Element {
       </section>
       <section className="mt-6 grid h-[55rem] w-full grid-cols-1 gap-10 bg-transparent px-4 text-white sm:mt-12 sm:h-[35rem] sm:grid-cols-2 sm:px-4">
         <div className="relative flex h-full flex-row items-center justify-center overflow-hidden rounded-lg border bg-transparent sm:px-4 md:shadow-xl">
-          {/* <Marquee pauseOnHover vertical className="w-full [--duration:30s]">
-            {firstRow.map((post) => (
-              <InstagramCard
-                key={post?.imageUrl}
-                avatarImg={post?.avatarImg}
-                name={post?.name}
-                location={post?.name}
-                likeNumbers={post?.likeNumbers}
-                title={post?.title}
-                tags={post?.tags}
-                imageUrl={post?.imageUrl}
-              />
-            ))}
-          </Marquee>
-          <Marquee
-            reverse
-            pauseOnHover
-            vertical
-            className="w-full [--duration:50s]"
-          >
-            {secondRow.map((post) => (
-              <InstagramCard
-                key={post?.imageUrl}
-                avatarImg={post?.avatarImg}
-                name={post?.name}
-                location={post?.name}
-                likeNumbers={post?.likeNumbers}
-                title={post?.title}
-                tags={post?.tags}
-                imageUrl={post?.imageUrl}
-              />
-            ))}
-          </Marquee> */}
-
           <AnimatedTestimonials testimonials={instaPosts} />
           <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-background"></div>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background"></div>

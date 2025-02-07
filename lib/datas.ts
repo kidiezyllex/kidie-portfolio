@@ -1125,11 +1125,40 @@ export const instaPosts = [
     designation: 'Product Manager at TechFlow',
     src: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/5c7943ef3cf880a6d9e9_mkgzhk.jpg',
   },
+
   {
     quote:
       "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
     name: 'Sarah Chen',
     designation: 'Product Manager at TechFlow',
     src: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/37a242f13fe683b8daf71_prrbkv.jpg',
+  },
+  {
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: 'Sarah Chen',
+    designation: 'Product Manager at TechFlow',
+    src: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/34026f4a125dae03f74c2_lv1qdk.jpg',
+  },
+  {
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: 'Sarah Chen',
+    designation: 'Product Manager at TechFlow',
+    src: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234854/learning-webdev-blog/portfolio/1726128736147_xl4ypa.jpg',
+  },
+  {
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: 'Sarah Chen',
+    designation: 'Product Manager at TechFlow',
+    src: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234854/learning-webdev-blog/portfolio/1726128736263_ldcmi2.jpg',
+  },
+  {
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: 'Sarah Chen',
+    designation: 'Product Manager at TechFlow',
+    src: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234858/learning-webdev-blog/portfolio/1726128736079_kdg9nm.jpg',
   },
 ];

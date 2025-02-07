@@ -6,7 +6,7 @@ const RoundedSlideButton: React.FC = () => {
   return (
     <Link
       href={
-        'https://dzhrcktg3t.ufs.sh/f/yKG0YxsXgqAJ68fx5wkwo2C3jIVeOG6QyZ4naqUvfctiFb71'
+        'https://dzhrcktg3t.ufs.sh/f/yKG0YxsXgqAJr21wavCuJyzFnpBq4oLxEP89hGgeDSvRajQT'
       }
       target="_blank"
     >

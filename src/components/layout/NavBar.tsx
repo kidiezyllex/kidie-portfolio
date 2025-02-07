@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import { Avatar, AvatarImage } from '../ui/avatar';
 import Link from 'next/link';
 import SparklesText from '../ui/sparkles-text';
-import { motion } from 'framer-motion';
 import { Home, Layers, FolderGit2, UserSearch } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';

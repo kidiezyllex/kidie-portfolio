@@ -12,9 +12,10 @@ import { GridBackgroundSection } from "@/components/layout/GridBackgroundSection
 import { Suspense, useState, useEffect, useRef } from "react"
 import { forceScrollTriggerRefresh } from "../../lib/utils"
 import { useIsMobile } from "../../hook/useIsMobile"
-import ScrollTextsSection from "@/components/layout/ScrollTextsSection"
+// import ScrollTextsSection from "@/components/layout/ScrollTextsSection"
 import type React from "react"
 import { ReactLenis } from '@studio-freight/react-lenis'
+import { CurrentJob } from "@/components/layout/CurrentJob"
 
 const exo2 = Exo_2({ subsets: ["latin"] })
 
@@ -47,11 +48,12 @@ export default function RootLayout({
   }, [loaderVisible]);
 
   const MainContent = () => (
-    <main className={`flex min-h-screen flex-col bg-slate-950 ${loaderVisible ? "opacity-0" : "opacity-100"}`}>
+    <main className={`flex min-h-screen flex-col bg-slate-950`}>
       {!isMobile && <Cursor />}
       <NavBar />
       <AuroraHero />
-      <ScrollTextsSection />
+      <CurrentJob />
+      {/* <ScrollTextsSection /> */}
       <GridBackgroundSection />
       <Footer />
     </main>
@@ -64,12 +66,14 @@ export default function RootLayout({
           <ReactLenis root>
             <Suspense fallback={<Loading />}>
               <div className="relative">
-                <div
-                  className={`fixed inset-0 z-50 flex items-center justify-center bg-transparent duration-500 ${loaderVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-                >
-                  <ParticleSwarmLoader />
-                </div>
-                <MainContent />
+                {
+                  loaderVisible ? <div
+                    className={`fixed inset-0 z-50 flex items-center justify-center bg-transparent duration-500 ${loaderVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+                  >
+                    <ParticleSwarmLoader />
+                  </div> :
+                    <MainContent />
+                }
               </div>
             </Suspense>
           </ReactLenis>

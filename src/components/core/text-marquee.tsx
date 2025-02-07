@@ -71,9 +71,9 @@ export default function ScrollBaseAnimation({
   });
 
   return (
-    <div className="flex flex-nowrap overflow-hidden whitespace-nowrap">
+    <div className="flex flex-nowrap overflow-hidden whitespace-nowrap bg-transparent">
       <motion.div
-        className="flex flex-nowrap gap-10 whitespace-nowrap"
+        className="flex flex-nowrap gap-10 whitespace-nowrap bg-transparent"
         style={{ x }}
       >
         <a className={cn(`block text-[7vw] dark:text-violet-300`, clasname)}>
