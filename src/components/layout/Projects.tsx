@@ -4,11 +4,12 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import { CardProps, mockBlogPosts } from '../../../lib/datas';
 import AvatarList from '../animata/list/avatar-list';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, FolderGit2, Github } from 'lucide-react';
 import { HoverBorderGradient } from '../ui/hover-border-gradient';
 import Link from 'next/link';
 import Safari from '../ui/safari';
 import { BrowserComponent } from '../ui/browser-component';
+import HoverButton from '../ui/hover-button';
 
 export default function ProjectsPage(): JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,7 +21,7 @@ export default function ProjectsPage(): JSX.Element {
   return (
     <main className="section -mt-8 bg-transparent lg:mt-0" ref={containerRef}>
       <section className="mt-12 grid h-fit w-full place-content-center bg-transparent">
-        <p className='text-center text-2xl text-violet-300 font-semibold leading-[120%] sm:text-5xl'>My Projects</p>
+        <HoverButton icon={FolderGit2} text={"MY PROJECTS"}></HoverButton>
       </section>
       <section className="mt-16 w-full bg-transparent lg:mt-0">
         {mockBlogPosts.map((project, i) => {
@@ -137,7 +138,6 @@ const ProjectCard: React.FC<CardProps> = ({
           </div>
         </BrowserComponent>
       </motion.div>
-      {/* </BrowserComponent> */}
     </div>
   );
 };

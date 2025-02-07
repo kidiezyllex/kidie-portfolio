@@ -1119,84 +1119,17 @@ export const teckstack6 = [
 
 export const instaPosts = [
   {
-    avatarImg:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/2c9ea450da4766193f56_bb4onm.jpg',
-    name: 'Thien An',
-    location: 'Quang Nam',
-    likeNumbers: 912,
-    title: 'Đá số yêu pố ank',
-    tags: ['front-end', 'webdev', 'ui', 'design', 'vaicachuong'],
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/5c7943ef3cf880a6d9e9_mkgzhk.jpg',
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: 'Sarah Chen',
+    designation: 'Product Manager at TechFlow',
+    src: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/5c7943ef3cf880a6d9e9_mkgzhk.jpg',
   },
   {
-    avatarImg:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/2c9ea450da4766193f56_bb4onm.jpg',
-    name: 'Thien An',
-    location: 'Quang Nam',
-    likeNumbers: 1251,
-    title: 'Tương tư nàng nhân viên',
-    tags: ['front-end', 'webdev', 'ui', 'design', 'lukaku'],
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/37a242f13fe683b8daf71_prrbkv.jpg',
-  },
-  {
-    avatarImg:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/2c9ea450da4766193f56_bb4onm.jpg',
-    name: 'Thien An',
-    location: 'Quang Nam',
-    likeNumbers: 1129,
-    title: 'Nhân viên quán',
-    tags: ['front-end', 'webdev', 'ui', 'design', 'call-me'],
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/34026f4a125dae03f74c2_lv1qdk.jpg',
-  },
-  ,
-  {
-    avatarImg:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/2c9ea450da4766193f56_bb4onm.jpg',
-    name: 'Thien An',
-    location: 'Quang Nam',
-    likeNumbers: 1129,
-    title: 'Cảm xúc kia quay về',
-    tags: ['front-end', 'webdev', 'ui', 'design', 'call-me'],
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234854/learning-webdev-blog/portfolio/1726128736147_xl4ypa.jpg',
-  },
-  ,
-  {
-    avatarImg:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/2c9ea450da4766193f56_bb4onm.jpg',
-    name: 'Thien An',
-    location: 'Quang Nam',
-    likeNumbers: 1129,
-    title: 'Nơi tình yêu bốc đầu',
-    tags: ['front-end', 'webdev', 'ui', 'design', 'lusc'],
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234854/learning-webdev-blog/portfolio/1726128736263_ldcmi2.jpg',
-  },
-  ,
-  {
-    avatarImg:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234855/learning-webdev-blog/portfolio/1726128736090_zgkwnl.jpg',
-    name: 'Thien An',
-    location: 'Quang Nam',
-    likeNumbers: 1129,
-    title: 'Vé số chiều nay',
-    tags: ['front-end', 'webdev', 'ui', 'design', 'rogue'],
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234855/learning-webdev-blog/portfolio/1726128736177_pwryjx.jpg',
-  },
-  ,
-  {
-    avatarImg:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/2c9ea450da4766193f56_bb4onm.jpg',
-    name: 'Thien An',
-    location: 'Quang Nam',
-    likeNumbers: 1129,
-    title: 'Hahaha woman',
-    tags: ['front-end', 'webdev', 'ui', 'design', 'zyllex'],
-    imageUrl:
-      'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234858/learning-webdev-blog/portfolio/1726128736079_kdg9nm.jpg',
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: 'Sarah Chen',
+    designation: 'Product Manager at TechFlow',
+    src: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736234298/learning-webdev-blog/portfolio/37a242f13fe683b8daf71_prrbkv.jpg',
   },
 ];

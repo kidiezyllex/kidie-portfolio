@@ -13,13 +13,11 @@ import Introduction from './Introduction';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
+import { StaticStars } from '../ui/static-stars-background';
 const Scene = dynamic(() => import('@/components/Scene'), { ssr: false });
-
 const COLORS_TOP = ['#09090B', '#8B5CF6', '#5B21B6', '#7E22CE'];
-
 export const AuroraHero = () => {
   const color = useMotionValue(COLORS_TOP[0]);
-
   useEffect(() => {
     animate(color, COLORS_TOP, {
       ease: 'easeInOut',
@@ -41,6 +39,7 @@ export const AuroraHero = () => {
         {/* <div className="absolute hidden h-fit w-[100%] items-center sm:flex sm:h-screen">
           <Scene />
         </div> */}
+        <div className="absolute bottom-0 left-0 right-0 top-0 z-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_100%_100%_at_0%_100%,#000_10%,transparent_70%)]"></div>
         <Introduction></Introduction>
         <>
           <Head>
@@ -65,8 +64,14 @@ export const AuroraHero = () => {
         </>
       </div>
       <div className="absolute inset-0 bottom-0 left-0 top-0 z-0 h-screen min-h-screen">
-        <Canvas>
-          <Stars radius={50} count={2500} factor={4} fade speed={2} />
+        {/* <Canvas>
+          <Stars radius={50} count={2500} factor={4}
+            fade
+            speed={2}
+          />
+        </Canvas> */}
+        <Canvas camera={{ position: [0, 0, 2] }}>
+          <StaticStars />
         </Canvas>
       </div>
     </motion.section>

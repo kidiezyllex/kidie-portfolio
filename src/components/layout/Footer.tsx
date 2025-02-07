@@ -1,19 +1,24 @@
 'use client';
 import Link from 'next/link';
-import { WavyBackground } from '../ui/wavy-background';
-import { motion } from 'framer-motion';
 import { Avatar, AvatarImage } from '../ui/avatar';
 import SparklesText from '../ui/sparkles-text';
 import { useRef } from 'react';
 import Image from 'next/image';
 import { BorderGradientIcon } from '../ui/border-gradient-icon';
-
 export default function Footer() {
   const logoTextRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative top-0 z-[1000]">
-      <WavyBackground className="flex flex-col items-center gap-4 bg-transparent sm:gap-8">
+    <div className="relative top-0 z-[1000] h-[100vh] -mt-40 flex justify-start items-start">
+      <Image
+        src={"/blob-scene-haikei.svg"}
+        alt="blob-background"
+        width={800}
+        height={800}
+        className='w-full h-full absolute z-0 object-cover'
+
+      />
+      <div className="absolute top-0 left-12 flex flex-col items-center justify-center gap-4 sm:gap-8">
         <div className="flex flex-row items-center justify-between">
           <Link
             href={''}
@@ -25,18 +30,7 @@ export default function Footer() {
                 className="text-center text-xl sm:text-4xl"
               />
             </div>
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 2,
-                ease: 'linear',
-                scale: {
-                  repeat: Infinity,
-                  repeatType: 'reverse',
-                },
-              }}
+            <div
             >
               <Avatar className="h-8 w-8 sm:h-12 sm:w-12">
                 <AvatarImage
@@ -45,7 +39,7 @@ export default function Footer() {
                   draggable="false"
                 />
               </Avatar>
-            </motion.div>
+            </div>
           </Link>
         </div>
         <div className="flex flex-grow items-center gap-2 self-center sm:gap-4">
@@ -126,7 +120,11 @@ export default function Footer() {
             </Link>
           </BorderGradientIcon>
         </div>
-      </WavyBackground>
+      </div>
+      <SparklesText
+        text="Thank for watching!"
+        className="text-center text-xl sm:text-4xl absolute right-16 bottom-8"
+      />
     </div>
   );
 }

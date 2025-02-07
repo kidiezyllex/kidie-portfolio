@@ -5,16 +5,16 @@ import Cursor from "@/components/custom-cursor/Cursor"
 import Footer from "@/components/layout/Footer"
 import Loading from "./loading"
 import ParticleSwarmLoader from "@/components/custom-loader/ParticleSwarmLoader"
-import { Exo_2 } from "next/font/google"
+import { Exo_2 } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
 import { AuroraHero } from "@/components/layout/AuroraHero"
 import { GridBackgroundSection } from "@/components/layout/GridBackgroundSection"
-import { Suspense, useState, useEffect } from "react"
+import { Suspense, useState, useEffect, useRef } from "react"
 import { forceScrollTriggerRefresh } from "../../lib/utils"
 import { useIsMobile } from "../../hook/useIsMobile"
-import type LocomotiveScroll from "locomotive-scroll"
 import ScrollTextsSection from "@/components/layout/ScrollTextsSection"
-import type React from "react" // Added import for React
+import type React from "react"
+import { ReactLenis } from '@studio-freight/react-lenis'
 
 const exo2 = Exo_2({ subsets: ["latin"] })
 
@@ -25,7 +25,6 @@ export default function RootLayout({
 }>) {
   const [loaderVisible, setLoaderVisible] = useState(true)
   const isMobile = useIsMobile()
-  const [locomotiveScroll, setLocomotiveScroll] = useState<LocomotiveScroll | null>(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,14 +47,13 @@ export default function RootLayout({
   }, [loaderVisible]);
 
   const MainContent = () => (
-    <main className={`flex min-h-screen flex-col bg-slate-950 ${loaderVisible ? "opacity-0" : "opacity-100"
-      }`}>
+    <main className={`flex min-h-screen flex-col bg-slate-950 ${loaderVisible ? "opacity-0" : "opacity-100"}`}>
       {!isMobile && <Cursor />}
       <NavBar />
       <AuroraHero />
       <ScrollTextsSection />
       <GridBackgroundSection />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   )
 
@@ -63,20 +61,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={exo2.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Suspense fallback={<Loading />}>
-            <div className="relative">
-              <div
-                className={`fixed inset-0 z-50 flex items-center justify-center bg-transparent duration-500 ${loaderVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-                  }`}
-              >
-                <ParticleSwarmLoader />
+          <ReactLenis root>
+            <Suspense fallback={<Loading />}>
+              <div className="relative">
+                <div
+                  className={`fixed inset-0 z-50 flex items-center justify-center bg-transparent duration-500 ${loaderVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+                >
+                  <ParticleSwarmLoader />
+                </div>
+                <MainContent />
               </div>
-              <MainContent />
-            </div>
-          </Suspense>
+            </Suspense>
+          </ReactLenis>
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
