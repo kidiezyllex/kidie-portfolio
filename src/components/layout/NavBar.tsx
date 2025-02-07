@@ -103,7 +103,7 @@ export default function NavBar() {
             href={''}
             className="flex flex-row items-center justify-start gap-3"
           >
-            <Avatar className="h-8 w-8 sm:h-12 sm:w-12">
+            <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
               <AvatarImage
                 src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736045484/learning-webdev-blog/download_qf0dzi.jpg"
                 alt="kidie-logo"

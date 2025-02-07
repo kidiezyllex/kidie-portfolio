@@ -18,21 +18,18 @@ export default function Footer() {
         className='w-full h-full absolute z-0 object-cover'
 
       />
-      <div className="absolute top-0 left-12 flex flex-col items-center justify-center gap-4 sm:gap-8">
+      <div className="absolute top-0 left-12 flex flex-col items-center justify-center gap-4 sm:gap-6">
         <div className="flex flex-row items-center justify-between">
           <Link
             href={''}
-            className="flex flex-row items-center justify-start gap-3"
+            className="flex flex-row items-center justify-start gap-2"
           >
             <div ref={logoTextRef}>
-              <SparklesText
-                text="Designed and Developed by me"
-                className="text-center text-xl sm:text-4xl"
-              />
+              <p className='font-[Verdana,Geneva,Tahoma,sans-serif] text-center text-xl sm:text-4xl text-violet-300 font-bold'>Designed and Developed by me</p>
             </div>
             <div
             >
-              <Avatar className="h-8 w-8 sm:h-12 sm:w-12">
+              <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
                 <AvatarImage
                   src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736045484/learning-webdev-blog/download_qf0dzi.jpg"
                   alt="kidie-logo"
@@ -121,10 +118,7 @@ export default function Footer() {
           </BorderGradientIcon>
         </div>
       </div>
-      <SparklesText
-        text="Thank for watching!"
-        className="text-center text-xl sm:text-4xl absolute right-16 bottom-8"
-      />
+      <p className='font-[Verdana,Geneva,Tahoma,sans-serif] text-center text-xl sm:text-4xl absolute right-16 bottom-8 text-violet-300 font-bold'>Thank for watching!</p>
     </div>
   );
 }

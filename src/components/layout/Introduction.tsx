@@ -16,17 +16,19 @@ export default function Introduction() {
         <div className="flex items-center gap-4">
           <p className='text-violet-300 text-2xl font-bold sm:text-5xl'>I'm{" "}</p>
           <Link
-            href={'/'}
+            href={"/"}
             onClick={(e) => e.preventDefault()}
-            className="relative z-[10000] text-nowrap bg-gradient-to-r from-violet-500 via-violet-300 to-violet-500 bg-clip-text font-bold md:text-3xl sm:text-5xl md:leading-9 lg:text-[55px] lg:leading-[48px] hover:shadow-violet-500/[0.1]"
+            className="relative z-[10000] text-nowrap bg-gradient-to-r text-violet-300 font-bold tracking-tighter md:text-3xl sm:text-4xl md:leading-9 lg:text-[55px] lg:leading-[48px] hover:shadow-violet-500/[0.1] font-[Verdana,Geneva,Tahoma,sans-serif]"
           >
-            BUI TRAN THIEN AN
+            Bui Tran Thien An
           </Link>
+
         </div>
-        {/* <TypingText
-          className="text-nowrap md:text-xl lg:text-2xl xl:text-3xl"
-          text={'A web developer passionate about design.'}
-        ></TypingText> */}
+        <p
+          className="sm:text-4xl font-bold font-[Verdana,Geneva,Tahoma,sans-serif] tracking-[-0.07em] leading-[90%] text-violet-300"
+        >
+          a <span className='text-[#F5A5A7]'>front-end</span> developer
+        </p>
         <div className="cursor-none flex gap-4 sm:my-4">
           <Link
             href={'https://www.linkedin.com/in/kidiezyllex'}
