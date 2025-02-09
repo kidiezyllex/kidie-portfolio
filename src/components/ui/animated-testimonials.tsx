@@ -43,7 +43,7 @@ export const AnimatedTestimonials = ({
         return Math.floor(Math.random() * 21) - 10;
     };
     return (
-        <div className="w-[60%] mx-auto antialiased font-sans px-4 md:px-8 lg:px-4 py-20">
+        <div className="sm:w-[60%] w-[80%] mx-auto antialiased font-sans px-4 md:px-8 lg:px-4 py-20">
             <div className="relative">
                 <div className="relative h-80 w-full">
                     <AnimatePresence>
@@ -90,7 +90,7 @@ export const AnimatedTestimonials = ({
                         ))}
                     </AnimatePresence>
                 </div>
-                <div className="flex justify-between flex-col pt-8">
+                <div className="flex justify-between flex-col pt-0 sm:pt-8">
                     <div className="flex justify-center gap-4 pt-12 md:pt-0">
                         <button
                             onClick={handlePrev}

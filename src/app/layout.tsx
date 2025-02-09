@@ -1,24 +1,21 @@
 "use client"
 import "./globals.css"
-import NavBar from "@/components/layout/NavBar"
-import Cursor from "@/components/custom-cursor/Cursor"
-import Footer from "@/components/layout/Footer"
 import Loading from "./loading"
-import ParticleSwarmLoader from "@/components/custom-loader/ParticleSwarmLoader"
 import { Exo_2 } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
-import { AuroraHero } from "@/components/layout/AuroraHero"
-import { GridBackgroundSection } from "@/components/layout/GridBackgroundSection"
-import { Suspense, useState, useEffect, useRef } from "react"
+import { Suspense, useState, useEffect } from "react"
 import { forceScrollTriggerRefresh } from "../../lib/utils"
 import { useIsMobile } from "../../hook/useIsMobile"
-// import ScrollTextsSection from "@/components/layout/ScrollTextsSection"
 import type React from "react"
 import { ReactLenis } from '@studio-freight/react-lenis'
-import { CurrentJob } from "@/components/layout/CurrentJob"
-
+import Cursor from "@/components/common/Cursor/page"
+import NavBar from "@/components/Navbar/page"
+import { AuroraHero } from "@/components/Hero/page"
+import { GridBackgroundSection } from "@/components/GridBackgroundSection/page"
+import Footer from "@/components/Footer/page"
+import { CurrentJob } from "@/components/CurrentJob/page"
+import ParticleSwarmLoader from "@/components/common/ParticleSwarmLoader/page"
 const exo2 = Exo_2({ subsets: ["latin"] })
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +23,6 @@ export default function RootLayout({
 }>) {
   const [loaderVisible, setLoaderVisible] = useState(true)
   const isMobile = useIsMobile()
-
   useEffect(() => {
     const timer = setTimeout(() => {
       forceScrollTriggerRefresh()
@@ -49,16 +45,14 @@ export default function RootLayout({
 
   const MainContent = () => (
     <main className={`flex min-h-screen flex-col bg-slate-950`}>
-      {!isMobile && <Cursor />}
+      <Cursor />
       <NavBar />
       <AuroraHero />
       <CurrentJob />
-      {/* <ScrollTextsSection /> */}
       <GridBackgroundSection />
       <Footer />
     </main>
   )
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={exo2.className}>
