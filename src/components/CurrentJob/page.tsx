@@ -8,20 +8,26 @@ import { currentJobsData } from "./data";
 export const CurrentJob = () => {
     const data = [
         {
-            title: "10/02/2025 - current",
+            title: "14/02/2025 - current",
             content: (
                 <DownloadCard data={currentJobsData[0]} />
             ),
         },
         {
-            title: "16/01/2025 - current",
+            title: "10/02/2025 - current",
             content: (
                 <DownloadCard data={currentJobsData[1]} />
             ),
         },
+        {
+            title: "16/01/2025 - current",
+            content: (
+                <DownloadCard data={currentJobsData[2]} />
+            ),
+        },
     ];
     return (
-        <div className="w-full lg:-mt-40 mb-40 relative">
+        <div className="section w-full lg:-mt-40 mb-40 relative">
             <Image
                 src={"/stacked-waves-haikei.svg"}
                 alt="blob-background"

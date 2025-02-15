@@ -1,6 +1,73 @@
 export const blogPostsData = [
   {
     id: 1,
+    responsible: [
+      'Chuyển giao diện từ Figma File sang Next.js',
+      'Reponsive cho tất cả các thiết bị',
+      'Xử lý các UX, các tương tác trên trang web',
+    ],
+    title: 'PleaseSpeak',
+    desc: 'Phần mềm hỗ trợ giảng dạy, tìm kiếm tài liệu, ngân hàng câu hỏi và luyện thi tiếng Anh cho cả giáo viên & học sinh.',
+    source: 'private',
+    live: 'https://pleasespeak.vn',
+    imageUrl:
+      './project1Preview.png',
+    logoUrl:
+      '/project1.png',
+    data: [
+      {
+        name: 'Next.js',
+        image:
+          'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736141496/learning-webdev-blog/portfolio/1_m0fm6w.png',
+      },
+      {
+        name: 'TypeScript',
+        image:
+          'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736141496/learning-webdev-blog/portfolio/2_zj8ore.png',
+      },
+      {
+        name: 'Vite',
+        image:''
+      },
+      {
+        name: 'ShadCN/UI',
+        image:
+          'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736203610/learning-webdev-blog/portfolio/11_c99nfb.png',
+      },
+      {
+        name: 'TailwindCSS',
+        image:
+          'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736203614/learning-webdev-blog/portfolio/8_uf4jk7.png',
+      },
+      {
+        name: 'Redux',
+        image:
+          'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736203610/learning-webdev-blog/portfolio/23_wxnimt.png',
+      },
+      {
+        name: 'Framer Motion',
+        image:
+          'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736220678/learning-webdev-blog/portfolio/32_euhs1l.png',
+      },
+      {
+        name: 'React Hook Form',
+        image:
+          'https://res.cloudinary.com/drqbhj6ft/image/upload/v1736414410/learning-webdev-blog/portfolio/40_xjarph.png',
+      },
+      {
+        name: 'Socket.io',
+        image:
+          '',
+      },
+    ],
+  },
+  {
+    id: 3,
+    responsible: [
+      'Phát triển và duy trì các ứng dụng web đáp ứng, đảm bảo thiết kế UI/UX mượt mà.',
+      'Đóng góp vào phát triển backend bằng cách triển khai các API RESTful.',
+      'Tiến hành phân tích và thiết kế hệ thống, bao gồm thu thập và phân tích yêu cầu.',
+    ],
     title: 'LamanClinic',
     desc: 'A Management Support System for Multi-Specialty Clinics.',
     source: 'https://github.com/kidiezyllex/KLTN_FE',
@@ -73,7 +140,13 @@ export const blogPostsData = [
     ],
   },
   {
-    id: 2,
+    id: 4,
+    responsible: [
+      'Build the online sports website interface according to the original page.',
+      'Set-up UI/UX libraries, build common components and handle responsive interface errors.',
+      'Handle Api Client and CMS Api.',
+      'Participate in producing the missing Api for Back-End.',
+    ],
     title: 'Luscsenger',
     desc: 'A Real-time Calling & Texting Application.',
     source: 'https://github.com/kidiezyllex/messenger-clone',
@@ -146,7 +219,13 @@ export const blogPostsData = [
     ],
   },
   {
-    id: 3,
+    id: 5,
+    responsible: [
+      'Build the online sports website interface according to the original page.',
+      'Set-up UI/UX libraries, build common components and handle responsive interface errors.',
+      'Handle Api Client and CMS Api.',
+      'Participate in producing the missing Api for Back-End.',
+    ],
     title: 'Proma',
     desc: 'A Project Management Application.',
     source: 'https://github.com/kidiezyllex/project-management',

@@ -27,7 +27,7 @@ export default function RootLayout({
     const timer = setTimeout(() => {
       forceScrollTriggerRefresh()
       setLoaderVisible(false)
-    }, 5000)
+    }, 500)
 
     return () => clearTimeout(timer)
   }, [])

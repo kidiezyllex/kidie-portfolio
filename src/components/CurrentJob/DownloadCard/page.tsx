@@ -10,7 +10,7 @@ export default function DownloadCard({ data }: { data: any }) {
                 </Avatar>
                 <div className="flex flex-col">
                     <span className="text-violet-300 text-lg sm:text-2xl font-bold leading-[26px]">{data?.companyName}</span>
-                    <span className="text-blue-500 text-base sm:text-2xl font-bold ">{data?.role}</span>
+                    <span className="text-blue-500 text-base sm:text-xl font-bold ">{data?.role}</span>
                 </div>
             </div>
             <ul className="list-disc flex flex-col gap-1 pl-5">

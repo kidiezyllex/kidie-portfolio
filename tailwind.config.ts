@@ -178,6 +178,10 @@ export default {
             boxShadow: '0 0 0 2em rgba(255, 0, 0, 0)',
           },
         },
+        scrolling: {
+          "0%": { opacity: "0", transform: "translateY(-20px) translateX(-50%)" },
+          "100%": { opacity: "1", transform: "translateY(20px) translateX(-50%)" },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -191,6 +195,8 @@ export default {
         pulse: 'pulse var(--duration) ease-out infinite',
         rippling: 'rippling var(--duration) ease-out',
         'hover-pulse': 'hover-pulse 1s ease-in-out',
+        scrolling: "scrolling 1s linear infinite",
+
       },
     },
   },

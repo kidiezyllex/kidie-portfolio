@@ -22,7 +22,7 @@ export default function AvatarList({
   };
 
   return (
-    <div className={cn('my-4 ml-4 mt-4 flex pt-2 sm:mt-6', className)}>
+    <div className={cn('flex ml-4', className)}>
       {data.map((item) => (
         <div
           key={item.name}

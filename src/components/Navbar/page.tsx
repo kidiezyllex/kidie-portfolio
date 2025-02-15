@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Avatar, AvatarImage } from '../ui/avatar';
 import Link from 'next/link';
 import SparklesText from '../ui/sparkles-text';
-import { Home, Layers, FolderGit2, UserSearch } from 'lucide-react';
+import { Home, Layers, FolderGit2, UserSearch, GitBranch } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import PulsatingButton from '../ui/pulsating-button';
@@ -12,8 +12,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const navItems = [
     { label: 'Home', icon: Home },
+    { label: 'Current Job', icon: GitBranch },
+    { label: 'Projects Participated', icon: FolderGit2 },
     { label: 'Tech Stack', icon: Layers },
-    { label: 'My Projects', icon: FolderGit2 },
     { label: 'About Me', icon: UserSearch },
 ];
 

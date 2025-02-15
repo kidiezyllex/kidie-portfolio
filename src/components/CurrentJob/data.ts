@@ -1,5 +1,15 @@
 export const currentJobsData = [
   {
+    companyName: 'Full-time Next.js Freelancer',
+    role: 'Với 1 năm kinh nghiệm',
+    responsible: [
+      'Xây dựng các trang client, cms, admin cho các dự án của khách hàng.',
+      'Ghép Api từ Back-End với trang client.',
+      'Xử lí các tính năng tương tác với trang web, responsive cho tất cả các thiết bị.',
+    ],
+    img: '/freelancer.jpg',
+  },
+  {
     companyName: 'BIT GROUP',
     role: 'Front-End Intern',
     responsible: [
@@ -16,6 +26,6 @@ export const currentJobsData = [
       'Handle Api Client and CMS Api.',
       'Participate in producing the missing Api for Back-End.',
     ],
-    img: '/freelancer.svg',
+    img: '/freelancer.jpg',
   },
 ];
