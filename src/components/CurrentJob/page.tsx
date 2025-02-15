@@ -27,7 +27,7 @@ export const CurrentJob = () => {
         },
     ];
     return (
-        <div className="section w-full lg:-mt-40 mb-40 relative">
+        <div className="section w-full mb-40 relative">
             <Image
                 src={"/stacked-waves-haikei.svg"}
                 alt="blob-background"

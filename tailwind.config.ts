@@ -179,8 +179,9 @@ export default {
           },
         },
         scrolling: {
-          "0%": { opacity: "0", transform: "translateY(-20px) translateX(-50%)" },
-          "100%": { opacity: "1", transform: "translateY(20px) translateX(-50%)" },
+          "0%": { opacity: "0", transform: "translateY(18px) translateX(-50%)" },
+          "50%": { opacity: "1", transform: "translateY(-18px) translateX(-50%)" },
+          "100%": { opacity: "0", transform: "translateY(18px) translateX(-50%)" },
         },
       },
       animation: {
@@ -195,8 +196,7 @@ export default {
         pulse: 'pulse var(--duration) ease-out infinite',
         rippling: 'rippling var(--duration) ease-out',
         'hover-pulse': 'hover-pulse 1s ease-in-out',
-        scrolling: "scrolling 1s linear infinite",
-
+        scrolling: "scrolling 2s linear infinite",
       },
     },
   },
