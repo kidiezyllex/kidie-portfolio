@@ -37,7 +37,7 @@ export const MyProjects = () => {
         {blogPostsData.map((project, i) => {
           const targetScale = 1 - (blogPostsData.length - i) * 0.05;
           return (
-            <div className="panel flex h-full w-screen flex-col items-center gap-4 sm:items-start">
+            <div key={`p_${i}`} className="panel flex h-full w-screen flex-col items-center gap-4 sm:items-start">
               <div className="mt-16 grid h-fit w-full place-content-center bg-transparent">
                 <HoverButton
                   icon={FolderGit2}
