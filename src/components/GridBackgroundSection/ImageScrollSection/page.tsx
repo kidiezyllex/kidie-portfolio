@@ -15,7 +15,6 @@ export const ImageScrollSection = () => {
                 style={{ height: `calc(${SECTION_HEIGHT}px + 170vh)` }}
                 className="relative w-full"
             >
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]"></div>
                 <ParallaxImages />
             </div>
         </div>

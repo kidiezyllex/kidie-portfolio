@@ -4,7 +4,6 @@ import Loading from "./loading"
 import { Exo_2 } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
 import { Suspense, useState, useEffect } from "react"
-import { forceScrollTriggerRefresh } from "../../lib/utils"
 import { useIsMobile } from "../../hook/useIsMobile"
 import type React from "react"
 import { ReactLenis } from '@studio-freight/react-lenis'
@@ -25,9 +24,8 @@ export default function RootLayout({
   const isMobile = useIsMobile()
   useEffect(() => {
     const timer = setTimeout(() => {
-      forceScrollTriggerRefresh()
       setLoaderVisible(false)
-    }, 500)
+    }, 4000)
 
     return () => clearTimeout(timer)
   }, [])

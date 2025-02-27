@@ -63,4 +63,11 @@ body {
   a {
     @apply cursor-none;
   }
+  .text-outline-violet {
+    -webkit-text-stroke: 1px #C2AFE6; /* violet-500 for better visibility */
+    -webkit-text-fill-color: transparent;
+    text-stroke: 1px #C2AFE6;
+    text-fill-color: transparent;
+    color: transparent;
+  }
 }

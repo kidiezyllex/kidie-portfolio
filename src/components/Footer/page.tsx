@@ -4,7 +4,7 @@ import { Avatar, AvatarImage } from '../ui/avatar';
 import Image from 'next/image';
 export default function Footer() {
     return (
-        <div className="relative top-0 z-[1000] sm:h-[100vh] h-[20vh] -mt-40 flex sm:justify-start sm:items-start justify-center items-center">
+        <div className="relative top-0 z-[1000] sm:h-[100vh] h-[30vh] -mt-40 flex sm:justify-start sm:items-start justify-center items-center">
             <Image
                 src={"/blob-scene-haikei.svg"}
                 alt="blob-background"
@@ -12,22 +12,25 @@ export default function Footer() {
                 height={800}
                 className='w-full h-full absolute z-0 object-cover'
             />
-            <div className="sm:absolute static top-0 left-12 flex flex-col items-center justify-center gap-4 sm:gap-6">
+            <div className="sm:absolute static top-0 left-12 flex flex-col items-center justify-center gap-4">
                 <div className="hidden sm:flex flex-row items-center justify-between">
                     <Link
                         href={''}
-                        className="flex flex-row items-center justify-center gap-2"
+                        className="flex flex-row items-center justify-center gap-2 mt-4"
                     >
-                        <p className='font-[Verdana,Geneva,Tahoma,sans-serif] sm:block hidden text-center text-xl sm:text-4xl text-violet-300 font-bold'>Designed and Developed by me</p>
-                        <div
-                        >
-                            <Avatar className="h-6 w-6 sm:h-8 sm:w-8">
-                                <AvatarImage
-                                    src="https://res.cloudinary.com/drqbhj6ft/image/upload/v1736045484/learning-webdev-blog/download_qf0dzi.jpg"
-                                    alt="kidie-logo"
-                                    draggable="false"
-                                />
-                            </Avatar>
+                        <p className="font-[Verdana,Geneva,Tahoma,sans-serif] sm:block hidden text-center text-xl sm:text-4xl font-bold text-outline-violet leading-10 mb-1">
+                            Designed and developed by me
+                        </p>
+                        <div className="relative h-9 w-9 overflow-hidden rounded-full border-[4px] border-[#C4B5FD]/10">
+                            <Image
+                                src="/avatar.jpg"
+                                alt="avatar-image"
+                                className="pointer-events-none h-full w-full select-none rounded-full object-fill"
+                                width={700}
+                                height={700}
+                                draggable="false"
+                                quality={100}
+                            />
                         </div>
                     </Link>
                 </div>
@@ -123,7 +126,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <p className='font-[Verdana,Geneva,Tahoma,sans-serif] text-center text-xl sm:text-4xl absolute right-16 bottom-8 text-violet-300 font-bold sm:block hidden'>Thank for watching!</p>
+            <p className='font-[Verdana,Geneva,Tahoma,sans-serif] text-center text-xl sm:text-4xl absolute right-16 bottom-8 text-violet-300 sm:block hidden text-outline-violet font-bold'>Thanks for scrolling 🙏</p>
         </div>
     );
 }

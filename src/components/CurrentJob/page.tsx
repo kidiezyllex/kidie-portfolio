@@ -5,6 +5,8 @@ import { GitPullRequestDraft } from "lucide-react";
 import HoverButton from "../ui/hover-button";
 import DownloadCard from "./DownloadCard/page";
 import { currentJobsData } from "./data";
+import { FaLaptopCode } from "react-icons/fa";
+
 export const CurrentJob = () => {
     const data = [
         {
@@ -27,7 +29,7 @@ export const CurrentJob = () => {
         },
     ];
     return (
-        <div className="section w-full mb-40 relative">
+        <div className="section w-full mb-[122px] relative">
             <Image
                 src={"/stacked-waves-haikei.svg"}
                 alt="blob-background"
@@ -35,8 +37,8 @@ export const CurrentJob = () => {
                 height={800}
                 className='w-full h-full absolute z-0 object-cover'
             />
-            <div className="w-full flex justify-center mt-14">
-                <HoverButton icon={GitPullRequestDraft} text={"CURRENT JOB"}></HoverButton>
+            <div className="w-full flex justify-center mt-10">
+                <HoverButton icon={FaLaptopCode} text={"CURRENT JOB"}></HoverButton>
             </div>
             <Timeline data={data} />
         </div>

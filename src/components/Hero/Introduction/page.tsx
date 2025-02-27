@@ -111,7 +111,7 @@ export default function Introduction() {
             <div className='w-full flex gap-3 justify-center items-center'>
                 <Layers className='h-8 w-8 text-[#9595FF]' />
                 <span className='text-white text-3xl font-bold'>5+</span>
-                <span className='text-[#9595FF] text-xl'>projects</span>
+                <span className='text-[#9595FF] text-xl font-bold'>projects</span>
             </div>
         </div>
         <div className="w-full flex h-36 items-center justify-center overflow-hidden">

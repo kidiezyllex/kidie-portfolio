@@ -1,14 +1,17 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import HoverButton from '@/components/ui/hover-button';
-import { FolderGit2 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { blogPostsData } from './data';
 import ProjectCard from './ProjectCard/page';
+import { FaDiagramProject } from "react-icons/fa6";
+import { useIsMobile } from '../../../../hook/useIsMobile';
+import ProjectCardMobile from './ProjectCardMobile/page';
 gsap.registerPlugin(ScrollTrigger);
 export const MyProjects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -33,14 +36,14 @@ export const MyProjects = () => {
   return (
     <main className="section bg-transparent">
       {/* Tablet trở lên */}
-      <div ref={containerRef} className="hidden h-screen w-fit sm:flex">
+      {!isMobile && <div ref={containerRef} className="h-screen w-fit flex">
         {blogPostsData.map((project, i) => {
           const targetScale = 1 - (blogPostsData.length - i) * 0.05;
           return (
             <div key={`p_${i}`} className="panel flex h-full w-screen flex-col items-center gap-4 sm:items-start">
               <div className="mt-16 grid h-fit w-full place-content-center bg-transparent">
                 <HoverButton
-                  icon={FolderGit2}
+                  icon={FaDiagramProject}
                   text={'PROJECTS PARTICIPATED'}
                 ></HoverButton>
               </div>
@@ -55,44 +58,42 @@ export const MyProjects = () => {
                 data={project?.data}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
-                logoUrl={project?.logoUrl} 
-                responsible={project?.responsible} 
+                logoUrl={project?.logoUrl}
+                responsible={project?.responsible}
               />
             </div>
           );
         })}
-      </div>
+      </div>}
       {/* Mobile */}
-      {/* <div className="flex sm:hidden flex-col gap-8">
-                <div className="w-full flex justify-center mt-14">
-                    <HoverButton icon={Layers} text={"MY PROJECTS"} />
-                </div>
-                {techStacks.map((stack, idx) => (
-                    <div key={idx} className="flex flex-col gap-4">
-                        <p className="w-full text-center text-xl font-semibold text-violet-300 sm:text-2xl">
-                            {stack.title}
-                        </p>
-                        <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
-                            {stack.data.map((item, index) => (
-                                <BorderGradientIcon key={index} className="relative h-20 w-20">
-                                    <Link href={item?.link} target="_blank">
-                                        <Image
-                                            src={item?.imageUrl}
-                                            alt="Tech Icon"
-                                            width={0}
-                                            height={0}
-                                            sizes="100vw"
-                                            className="h-full max-h-20 w-auto rounded-md object-cover"
-                                            loading="lazy"
-                                            blurDataURL={item?.imageUrl}
-                                        />
-                                    </Link>
-                                </BorderGradientIcon>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-            </div> */}
+      {isMobile && <div className="flex h-full w-screen flex-col items-center gap-4 sm:items-start">
+        <div className="mt-10 mb-4 grid h-fit w-full place-content-center bg-transparent">
+          <HoverButton
+            icon={FaDiagramProject}
+            text={'PROJECTS PARTICIPATED'}
+          ></HoverButton>
+        </div>
+        <div className='w-full flex flex-col gap-4'>
+          {
+            blogPostsData.map((project, i) => {
+              return (
+                <ProjectCardMobile
+                  key={`p_${i}`}
+                  i={i}
+                  title={project?.title}
+                  description={project?.desc}
+                  src={project?.source}
+                  imageUrl={project?.imageUrl}
+                  logoUrl={project?.logoUrl}
+                  responsible={project?.responsible}
+                  live={project?.live}
+                  data={project?.data}
+                />
+              )
+            })
+          }
+        </div>
+      </div>}
     </main>
   );
 };
