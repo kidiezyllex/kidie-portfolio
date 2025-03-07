@@ -1,10 +1,11 @@
 'use client';
 import Link from 'next/link';
-import { Avatar, AvatarImage } from '../ui/avatar';
 import Image from 'next/image';
+import { useIsMobile } from '../../../hook/useIsMobile';
 export default function Footer() {
+    const isMobile = useIsMobile()
     return (
-        <div className="relative top-0 z-[1000] sm:h-[100vh] h-[30vh] -mt-40 flex sm:justify-start sm:items-start justify-center items-center">
+        <div className={`relative top-0 z-[1000] sm:h-[100vh] h-[30vh] ${isMobile ? '-mt-20' : '-mt-40'} flex sm:justify-start sm:items-start justify-center items-center`}>
             <Image
                 src={"/blob-scene-haikei.svg"}
                 alt="blob-background"

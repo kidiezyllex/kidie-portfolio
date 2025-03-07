@@ -179,9 +179,9 @@ export default {
           },
         },
         scrolling: {
-          "0%": { opacity: "0", transform: "translateY(18px) translateX(-50%)" },
-          "50%": { opacity: "1", transform: "translateY(-18px) translateX(-50%)" },
-          "100%": { opacity: "0", transform: "translateY(18px) translateX(-50%)" },
+          "0%": {  transform: "translateY(18px) translateX(-50%)" },
+          "50%": { transform: "translateY(-18px) translateX(-50%)" },
+          "100%": {  transform: "translateY(18px) translateX(-50%)" },
         },
       },
       animation: {

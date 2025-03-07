@@ -59,6 +59,9 @@ export const AuroraHero = () => {
             draggable="false"
             quality={100}
             loading="eager"
+            priority={true}
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNUIyMUI2MjAiLz48L3N2Zz4="
           />
         )}
         {!isMobile && <div className="absolute bottom-2 left-1/2 h-fit w-fit -translate-x-1/2 transform">

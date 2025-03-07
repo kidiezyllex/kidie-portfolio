@@ -5,6 +5,7 @@ import Safari from '@/components/ui/safari';
 import { BrowserComponent } from '@/components/ui/browser-component';
 import AvatarList from '@/components/animata/list/avatar-list';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
+import { useLanguageStore } from '@/store/languageStore';
 
 interface ProjectCardProps {
   i: number;
@@ -33,6 +34,7 @@ export default function ProjectCard({
   live,
   responsible,
 }: ProjectCardProps) {
+  const { isVietnamese } = useLanguageStore();
   return (
     <div className="flex w-full items-center justify-center lg:h-screen">
      <BrowserComponent
@@ -55,13 +57,13 @@ export default function ProjectCard({
                       <p className="break-words text-start text-xl font-semibold text-violet-300 lg:text-2xl">
                         {title}
                       </p>
-                      <p className="w-full break-words text-start text-sm font-semibold text-[#9799a7] ">
+                      <p className="w-full break-words  text-justify text-sm font-semibold text-[#9799a7] ">
                         {description}
                       </p>
                     </div>
                   </div>
                   <p className="break-words text-start text-base font-semibold text-violet-300 lg:text-lg">
-                    Vai trò
+                    {isVietnamese ? "Vai trò" : "Responsibility"}
                   </p>
                   <ul className="flex list-disc flex-col gap-1 pl-5 text-justify">
                     {responsible.map((item: string, index: number) => (
@@ -83,7 +85,7 @@ export default function ProjectCard({
                  
                 </div>
               </div>
-              <div className="w-full flex items-center justify-between">
+              <div className="w-full flex items-center justify-between absolute -bottom-12 px-5">
                 <AvatarList data={data} />
                 <div className="flex items-center gap-2">
                 <Link href={src} target="_blank">
@@ -95,10 +97,10 @@ export default function ProjectCard({
                         <Github className="h-4 w-4 cursor-none text-violet-300" />
                         <p className="cursor-none text-nowrap text-sm font-semibold text-violet-300">
                           <span className="hidden text-nowrap xl:block">
-                            Source Code & Demo Video
+                            {isVietnamese ? "Mã nguồn & Video Demo" : "Source Code & Demo Video"}
                           </span>
                           <span className="block text-nowrap xl:hidden">
-                            Source
+                            {isVietnamese ? "Mã nguồn" : "Source Code"}
                           </span>
                         </p>
                       </HoverBorderGradient>
@@ -111,13 +113,12 @@ export default function ProjectCard({
                       >
                         <ExternalLink className="h-4 w-4 cursor-none text-violet-300" />
                         <p className="cursor-none text-nowrap text-sm font-semibold text-violet-300">
-                          Live Demo
+                          {isVietnamese ? "Trang web" : "Website"}
                         </p>
                       </HoverBorderGradient>
                     </Link>
                     </div>
               </div>
-              
             </div>
           </div>
         </BrowserComponent>

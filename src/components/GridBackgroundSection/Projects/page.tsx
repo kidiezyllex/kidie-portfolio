@@ -3,15 +3,18 @@ import { useEffect, useRef } from 'react';
 import HoverButton from '@/components/ui/hover-button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { blogPostsData } from './data';
+import { blogPostsData, blogPostsDataVN } from './mockData';
 import ProjectCard from './ProjectCard/page';
-import { FaDiagramProject } from "react-icons/fa6";
 import { useIsMobile } from '../../../../hook/useIsMobile';
 import ProjectCardMobile from './ProjectCardMobile/page';
+import { GoProject } from "react-icons/go";
+import { useLanguageStore } from '@/store/languageStore';
+
 gsap.registerPlugin(ScrollTrigger);
 export const MyProjects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const { isVietnamese } = useLanguageStore();
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -32,18 +35,18 @@ export const MyProjects = () => {
       tl.scrollTrigger?.kill();
     };
   }, []);
-
+  const projects = isVietnamese ? blogPostsDataVN : blogPostsData;
   return (
     <main className="section bg-transparent">
       {/* Tablet trở lên */}
       {!isMobile && <div ref={containerRef} className="h-screen w-fit flex">
-        {blogPostsData.map((project, i) => {
-          const targetScale = 1 - (blogPostsData.length - i) * 0.05;
+        {projects.map((project, i) => {
+          const targetScale = 1 - (projects.length - i) * 0.05;
           return (
             <div key={`p_${i}`} className="panel flex h-full w-screen flex-col items-center gap-4 sm:items-start">
               <div className="mt-16 grid h-fit w-full place-content-center bg-transparent">
                 <HoverButton
-                  icon={FaDiagramProject}
+                  icon={GoProject}
                   text={'PROJECTS PARTICIPATED'}
                 ></HoverButton>
               </div>
@@ -69,13 +72,13 @@ export const MyProjects = () => {
       {isMobile && <div className="flex h-full w-screen flex-col items-center gap-4 sm:items-start">
         <div className="mt-10 mb-4 grid h-fit w-full place-content-center bg-transparent">
           <HoverButton
-            icon={FaDiagramProject}
+            icon={GoProject}
             text={'PROJECTS PARTICIPATED'}
           ></HoverButton>
         </div>
         <div className='w-full flex flex-col gap-4'>
           {
-            blogPostsData.map((project, i) => {
+            projects.map((project, i) => {
               return (
                 <ProjectCardMobile
                   key={`p_${i}`}

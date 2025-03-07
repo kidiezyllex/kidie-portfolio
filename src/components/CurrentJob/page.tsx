@@ -4,27 +4,23 @@ import { Timeline } from "@/components/ui/timeline";
 import { GitPullRequestDraft } from "lucide-react";
 import HoverButton from "../ui/hover-button";
 import DownloadCard from "./DownloadCard/page";
-import { currentJobsData } from "./data";
+import { currentJobsData, currentJobsDataVN } from "./data";
 import { FaLaptopCode } from "react-icons/fa";
+import { useLanguageStore } from "@/store/languageStore";
 
 export const CurrentJob = () => {
+    const { isVietnamese } = useLanguageStore();
     const data = [
         {
-            title: "14/02/2025 - current",
+            title: isVietnamese ? "Cho khách hàng, công ty" : "For customers, companies",
             content: (
-                <DownloadCard data={currentJobsData[0]} />
+                <DownloadCard data={isVietnamese ? currentJobsDataVN[0] : currentJobsData[0]} />
             ),
         },
         {
-            title: "10/02/2025 - current",
+            title: isVietnamese ? "Cho học sinh, sinh viên" : "For students",
             content: (
-                <DownloadCard data={currentJobsData[1]} />
-            ),
-        },
-        {
-            title: "16/01/2025 - current",
-            content: (
-                <DownloadCard data={currentJobsData[2]} />
+                <DownloadCard data={isVietnamese ? currentJobsDataVN[1] : currentJobsData[1]} />
             ),
         },
     ];
@@ -35,10 +31,10 @@ export const CurrentJob = () => {
                 alt="blob-background"
                 width={800}
                 height={800}
-                className='w-full h-full absolute z-0 object-cover'
+                className='w-full h-full absolute z-0 object-cover opacity-50'
             />
             <div className="w-full flex justify-center mt-10">
-                <HoverButton icon={FaLaptopCode} text={"CURRENT JOB"}></HoverButton>
+                <HoverButton icon={FaLaptopCode} text={"SERVICES"}></HoverButton>
             </div>
             <Timeline data={data} />
         </div>

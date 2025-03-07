@@ -9,11 +9,12 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import PulsatingButton from '../ui/pulsating-button';
 import Image from 'next/image';
+import { useLanguageStore } from '@/store/languageStore';
 gsap.registerPlugin(ScrollTrigger);
 
 const navItems = [
   { label: 'Home', icon: Home },
-  { label: 'Current Job', icon: GitBranch },
+  { label: 'Services', icon: GitBranch },
   { label: 'Projects Participated', icon: FolderGit2 },
   { label: 'Tech Stack', icon: Layers },
   { label: 'About Me', icon: UserSearch },
@@ -23,6 +24,7 @@ export default function NavBar() {
   const [itemIndex, setItemIndex] = useState(0);
   const itemRef = useRef<HTMLDivElement>(null);
   const logoTextRef = useRef<HTMLDivElement>(null);
+  const { isVietnamese, toggleLanguage } = useLanguageStore();
 
   useEffect(() => {
     const initScrollTrigger = () => {
@@ -98,6 +100,20 @@ export default function NavBar() {
             className="pointer-events-none h-full w-full select-none rounded-full object-fill"
             width={700}
             height={700}
+            draggable="false"
+            quality={100}
+          />
+        </div>
+        <div 
+          className="relative h-9 w-9 overflow-hidden rounded-full border-[4px] border-[#C4B5FD]/10 cursor-pointer"
+          onClick={toggleLanguage}
+        >
+          <Image
+            src={isVietnamese ? "/vn.png" : "/uk.png"}
+            alt={isVietnamese ? "Vietnamese" : "English"}
+            className="h-full w-full select-none rounded-full object-cover"
+            width={36}
+            height={36}
             draggable="false"
             quality={100}
           />

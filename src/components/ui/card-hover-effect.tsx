@@ -35,7 +35,7 @@ export const HoverEffect = ({
                     <AnimatePresence>
                         {hoveredIndex === idx && (
                             <motion.span
-                                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-xl"
                                 layoutId="hoverBackground"
                                 initial={{ opacity: 0 }}
                                 animate={{
@@ -49,15 +49,13 @@ export const HoverEffect = ({
                             />
                         )}
                     </AnimatePresence>
-                    <BorderGradientIcon className="relative h-20 w-20">
+                    <BorderGradientIcon className="relative h-16 w-16">
                         <Link href={item?.link} target="_blank">
                             <Image
                                 src={item?.imageUrl}
                                 alt="Message Image"
-                                width={0}
-                                height={0}
-                                sizes="100vw"
-                                className="h-full max-h-20 w-auto rounded-md object-cover"
+                                fill
+                                className="h-full max-h-16 w-auto rounded-md object-cover"
                                 loading="lazy"
                                 blurDataURL={item?.imageUrl}
                             />
