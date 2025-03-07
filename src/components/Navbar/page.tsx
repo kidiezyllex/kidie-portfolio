@@ -10,22 +10,24 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import PulsatingButton from '../ui/pulsating-button';
 import Image from 'next/image';
 import { useLanguageStore } from '@/store/languageStore';
+import { FaLaptopCode, FaRegFaceSmileBeam } from 'react-icons/fa6';
+import { GoProject } from 'react-icons/go';
 gsap.registerPlugin(ScrollTrigger);
 
-const navItems = [
-  { label: 'Home', icon: Home },
-  { label: 'Services', icon: GitBranch },
-  { label: 'Projects Participated', icon: FolderGit2 },
-  { label: 'Tech Stack', icon: Layers },
-  { label: 'About Me', icon: UserSearch },
-];
+
 
 export default function NavBar() {
   const [itemIndex, setItemIndex] = useState(0);
   const itemRef = useRef<HTMLDivElement>(null);
   const logoTextRef = useRef<HTMLDivElement>(null);
   const { isVietnamese, toggleLanguage } = useLanguageStore();
-
+  const navItems = [
+    { label: isVietnamese ? 'Trang chủ' : 'Home', icon: Home },
+    { label: isVietnamese ? 'Dịch vụ' : 'Services', icon: FaLaptopCode },
+    { label: isVietnamese ? 'Công nghệ' : 'Tech Stack', icon: Layers },
+    { label: isVietnamese ? 'Dự án' : 'Projects', icon: GoProject },
+    { label: isVietnamese ? 'Tôi' : 'About Me', icon: FaRegFaceSmileBeam },
+  ];
   useEffect(() => {
     const initScrollTrigger = () => {
       const sections = gsap.utils.toArray<HTMLElement>('.section');
@@ -88,7 +90,7 @@ export default function NavBar() {
     return (
       <div ref={itemRef} className="flex flex-row items-center gap-2">
         <PulsatingButton className="item flex cursor-none flex-row items-center gap-2 rounded-full px-4 py-1">
-          <p className="text-xs font-semibold uppercase text-violet-300 sm:text-sm">
+          <p className="text-xs text-nowrap font-semibold uppercase text-violet-300 sm:text-sm">
             {label}
           </p>
           <Icon className="h-3 w-3 cursor-none text-violet-300 sm:h-4 sm:w-4" />

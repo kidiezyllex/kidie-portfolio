@@ -8,6 +8,7 @@ import { BorderGradientIcon } from '@/components/ui/border-gradient-icon';
 import { FaCode } from "react-icons/fa6";
 import { useIsMobile } from '../../../../hook/useIsMobile';
 import { useEffect, useState } from 'react';
+import { Layers } from 'lucide-react';
 
 export const TechStack = () => {
     const isMobile = useIsMobile();
@@ -37,7 +38,7 @@ export const TechStack = () => {
     return (
         <main className={`section bg-transparent mt-10 ${isMobile ? 'h-[200vh]' : 'h-[100vh]'}`} id="tech-stack-section">
             <div className="grid h-fit w-full place-content-center bg-transparent">
-                <HoverButton icon={FaCode} text={"TECH STACK"}></HoverButton>
+                <HoverButton icon={Layers} text={"TECH STACK"}></HoverButton>
             </div>
             {!isMobile && isVisible && 
             <section className="w-full mt-10 bg-transparent grid md:grid-cols-2 lg:grid-cols-3">
