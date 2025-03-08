@@ -1,14 +1,14 @@
 'use client';
 import HoverButton from '@/components/ui/hover-button';
-import { HoverEffect } from "@/components/ui/card-hover-effect"
 import { techStacks } from './data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BorderGradientIcon } from '@/components/ui/border-gradient-icon';
 import { useIsMobile } from '../../../../hook/useIsMobile';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Layers } from 'lucide-react';
-
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
 export const TechStack = () => {
     const isMobile = useIsMobile();
     const sectionRef = useRef(null);
@@ -32,7 +32,7 @@ export const TechStack = () => {
                                 {stack.title}
                             </p>
                             <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
-                                <HoverEffect items={stack.data} />
+                                <LazyHoverEffect items={stack.data} />
                             </div>
                         </div>
                     ))
@@ -75,3 +75,113 @@ export const TechStack = () => {
         </main>
     );
 }
+
+const LazyHoverEffect = ({
+    items,
+    className,
+}: {
+    items: {
+        link: string;
+        imageUrl: string;
+    }[];
+    className?: string;
+}) => {
+    let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [visibleItems, setVisibleItems] = useState<number[]>([]);
+    const containerRef = useRef<HTMLDivElement>(null);
+    
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const container = entries[0];
+                if (container.isIntersecting) {
+                    // Khi container hiển thị, tải 4 hình ảnh đầu tiên ngay lập tức
+                    setVisibleItems([0, 1, 2, 3].filter(idx => idx < items.length));
+                    
+                    // Sau đó tải dần các hình ảnh còn lại
+                    if (items.length > 4) {
+                        const loadRemainingImages = () => {
+                            setVisibleItems(prev => {
+                                const allIndices = Array.from({ length: items.length }, (_, i) => i);
+                                return allIndices;
+                            });
+                        };
+                        
+                        // Tải các hình ảnh còn lại sau 300ms
+                        const timer = setTimeout(loadRemainingImages, 300);
+                        return () => clearTimeout(timer);
+                    }
+                }
+            },
+            { threshold: 0.1 }
+        );
+        
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+        
+        return () => {
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
+            }
+        };
+    }, [items.length]);
+
+    return (
+        <div
+            ref={containerRef}
+            className={cn(
+                "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-10",
+                className
+            )}
+        >
+            {items.map((item, idx) => (
+                visibleItems.includes(idx) ? (
+                    <Link
+                        href={item?.link}
+                        key={item?.link}
+                        className="relative group block p-2 h-full w-full"
+                        onMouseEnter={() => setHoveredIndex(idx)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                    >
+                        <AnimatePresence>
+                            {hoveredIndex === idx && (
+                                <motion.span
+                                    className="absolute inset-0 h-full w-full bg-slate-800/[0.8] block rounded-xl"
+                                    layoutId="hoverBackground"
+                                    initial={{ opacity: 0 }}
+                                    animate={{
+                                        opacity: 1,
+                                        transition: { duration: 0.15 },
+                                    }}
+                                    exit={{
+                                        opacity: 0,
+                                        transition: { duration: 0.15, delay: 0.2 },
+                                    }}
+                                />
+                            )}
+                        </AnimatePresence>
+                        <BorderGradientIcon className="relative h-16 w-16">
+                            <Link href={item?.link} target="_blank">
+                                <Image
+                                    src={item?.imageUrl}
+                                    alt="Tech Icon"
+                                    fill
+                                    quality={60}
+                                    sizes="(max-width: 768px) 64px, 64px"
+                                    className="h-full max-h-16 w-auto rounded-md object-cover"
+                                    loading="lazy"
+                                    placeholder="blur"
+                                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiM0YjU1NjMiLz48L3N2Zz4="
+                                />
+                            </Link>
+                        </BorderGradientIcon>
+                    </Link>
+                ) : (
+                    <div key={idx} className="relative group block p-2 h-16 w-16"></div>
+                )
+            ))}
+        </div>
+    );
+};
+
