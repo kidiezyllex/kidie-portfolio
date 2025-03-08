@@ -40,7 +40,7 @@ export const teckstack1 = [
     id: 2,
     name: 'TypeScript',
     imageUrl:
-    '/tech-stack/6.png',
+      '/tech-stack/6.png',
     link: 'https://www.typescriptlang.org/docs/',
   },
   {
@@ -76,58 +76,66 @@ export const teckstack1 = [
 export const teckstack2 = [
   {
     id: 1,
-    name: 'React',
-    imageUrl:
-    '/tech-stack/20.png',
-    link: 'https://react.dev/learn',
-  },
-  {
-    id: 2,
-    name: 'React Native',
-    imageUrl:
-    '/tech-stack/25.png',
-    link: 'https://reactnative.dev/docs/getting-started',
-  },
-  {
-    id: 3,
     name: 'Next.js',
     imageUrl:
-    '/tech-stack/1.png',
+      '/tech-stack/1.png',
     link: 'https://nextjs.org/docs',
   },
   {
+    id: 2,
+    name: 'React',
+    imageUrl:
+      '/tech-stack/20.png',
+    link: 'https://react.dev/learn',
+  },
+  {
+    id: 3,
+    name: 'Vite',
+    imageUrl:
+      '/tech-stack/51.png',
+    link: 'https://vitejs.dev/guide/',
+  },
+  {
     id: 4,
+    name: 'React Native',
+    imageUrl:
+      '/tech-stack/25.png',
+    link: 'https://reactnative.dev/docs/getting-started',
+  },
+
+  {
+    id: 5,
     name: 'Node.js',
     imageUrl:
-    '/tech-stack/3.png',
+      '/tech-stack/3.png',
     link: 'https://nodejs.org/en/docs/',
   },
   {
-    id: 5,
+    id: 6,
     name: 'Express.js',
     imageUrl:
-    '/tech-stack/24.png',
+      '/tech-stack/24.png',
     link: 'https://expressjs.com/en/4x/api.html',
   },
   {
-    id: 6,
+    id: 7,
     name: 'Zustand',
     imageUrl:
-    '/tech-stack/22.png',
+      '/tech-stack/22.png',
     link: 'https://docs.pmnd.rs/zustand/getting-started/introduction',
   },
   {
-    id: 7,
+    id: 8,
     name: 'Redux',
     imageUrl:
-    '/tech-stack/23.png',
+      '/tech-stack/23.png',
     link: 'https://redux-toolkit.js.org/introduction/getting-started',
   },
   {
-    id: 8,
+    id: 9,
     name: 'NextAuth.js',
     imageUrl:
-    '/tech-stack/37.png',
+      '/tech-stack/37.png',
     link: 'https://next-auth.js.org/',
   },
 ];
@@ -137,42 +145,42 @@ export const teckstack3 = [
     id: 1,
     name: 'TailwindCSS',
     imageUrl:
-    '/tech-stack/8.png',
+      '/tech-stack/8.png',
     link: 'https://tailwindcss.com/docs/installation',
   },
   {
     id: 2,
     name: 'ShadCN/UI',
     imageUrl:
-    '/tech-stack/11.png',
+      '/tech-stack/11.png',
     link: 'https://ui.shadcn.com/docs/components',
   },
   {
     id: 3,
     name: 'Material UI',
     imageUrl:
-    '/tech-stack/13.png',
+      '/tech-stack/13.png',
     link: 'https://mui.com/material-ui/getting-started/',
   },
   {
     id: 4,
     name: 'Antd',
     imageUrl:
-    '/tech-stack/13.png',
+      '/tech-stack/50.png',
     link: 'https://ant.design/docs/react/introduce',
   },
   {
     id: 5,
     name: 'Framer Motion',
     imageUrl:
-    '/tech-stack/32.png',
+      '/tech-stack/32.png',
     link: 'https://motion.dev/',
   },
   {
     id: 6,
     name: 'GSAP',
     imageUrl:
-    '/tech-stack/48.png',
+      '/tech-stack/48.png',
     link: 'https://gsap.com/docs/v3/',
   },
 ];
@@ -182,21 +190,21 @@ export const teckstack4 = [
     id: 1,
     name: 'MongoDB',
     imageUrl:
-    '/tech-stack/26.png',
+      '/tech-stack/26.png',
     link: 'https://www.mongodb.com/docs/',
   },
   {
     id: 2,
     name: 'PostgreSQL',
     imageUrl:
-    '/tech-stack/28.png',
+      '/tech-stack/28.png',
     link: 'https://www.postgresql.org/docs/',
   },
   {
     id: 3,
     name: 'SQLServer',
     imageUrl:
-    '/tech-stack/27.png',
+      '/tech-stack/27.png',
     link: 'https://www.microsoft.com/en-us/sql-server/sql-server-2019',
 
   },
@@ -204,7 +212,7 @@ export const teckstack4 = [
     id: 4,
     name: 'Prisma',
     imageUrl:
-    '/tech-stack/21.png',
+      '/tech-stack/21.png',
     link: 'https://www.prisma.io/docs',
   },
 ];
@@ -214,35 +222,35 @@ export const teckstack5 = [
     id: 1,
     name: 'Firebase',
     imageUrl:
-    '/tech-stack/34.png',
+      '/tech-stack/34.png',
     link: 'https://firebase.google.com/docs?hl=vi',
   },
   {
     id: 2,
     name: 'Clerk',
     imageUrl:
-    '/tech-stack/36.png',
+      '/tech-stack/36.png',
     link: 'https://clerk.com/docs/quickstarts/nextjs',
   },
   {
     id: 3,
     name: 'Uploadthing',
     imageUrl:
-    '/tech-stack/38.png',
+      '/tech-stack/38.png',
     link: 'https://docs.uploadthing.com/',
   },
   {
     id: 4,
     name: 'Pusher',
     imageUrl:
-    '/tech-stack/42.png',
+      '/tech-stack/42.png',
     link: 'https://pusher.com/docs/',
   },
   {
     id: 5,
     name: 'Socket.io',
     imageUrl:
-    '/tech-stack/43.png',
+      '/tech-stack/43.png',
     link: 'https://socket.io/docs/',
   },
 ];

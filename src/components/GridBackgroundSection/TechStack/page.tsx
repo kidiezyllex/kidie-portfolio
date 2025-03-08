@@ -5,47 +5,30 @@ import { techStacks } from './data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BorderGradientIcon } from '@/components/ui/border-gradient-icon';
-import { FaCode } from "react-icons/fa6";
 import { useIsMobile } from '../../../../hook/useIsMobile';
-import { useEffect, useState } from 'react';
+import { useRef } from 'react';
 import { Layers } from 'lucide-react';
 
 export const TechStack = () => {
     const isMobile = useIsMobile();
-    const [isVisible, setIsVisible] = useState(false);
-    
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.1 }
-        );
-        
-        const section = document.getElementById('tech-stack-section');
-        if (section) {
-            observer.observe(section);
-        }
-        
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
+    const sectionRef = useRef(null);
     
     return (
-        <main className={`section bg-transparent mt-10 ${isMobile ? 'h-[200vh]' : 'h-[100vh]'}`} id="tech-stack-section">
+        <main className={`section bg-transparent mt-10 ${isMobile ? 'h-[250vh]' : 'h-[100vh]'}`} id="tech-stack-section" ref={sectionRef}>
             <div className="grid h-fit w-full place-content-center bg-transparent">
                 <HoverButton icon={Layers} text={"TECH STACK"}></HoverButton>
             </div>
-            {!isMobile && isVisible && 
+            {!isMobile && 
             <section className="w-full mt-10 bg-transparent grid md:grid-cols-2 lg:grid-cols-3">
                 {
                     techStacks.map((stack, idx) => (
-                        <div className={`w-full flex flex-col ${idx === techStacks.length - 1 ? 'flex-grow-1' : 'flex-1'}`} key={idx}>
-                            <p className="w-full text-center font-semibold text-violet-300 text-2xl">
+                        <div 
+                            className={`w-full flex flex-col ${idx === techStacks.length - 1 ? 'flex-grow-1' : 'flex-1'}`} 
+                            key={idx}
+                        >
+                            <p className="w-full text-center font-semibold text-violet-300 text-2xl mb-4 relative 
+                               after:content-[''] after:block after:w-[40%] after:h-1 after:bg-gradient-to-r after:from-violet-500 after:to-fuchsia-500 
+                               after:mx-auto after:mt-2 tracking-wide uppercase transform transition-all duration-300 hover:text-white">
                                 {stack.title}
                             </p>
                             <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">
@@ -56,10 +39,15 @@ export const TechStack = () => {
                 }
             </section>}
             {/* Mobile */}
-            {isMobile && isVisible && <div className="flex flex-col gap-8 mt-10">
+            {isMobile && <div className="flex flex-col gap-8 mt-10">
                 {techStacks.map((stack, idx) => (
-                    <div key={idx} className="flex flex-col gap-4">
-                        <p className="w-full text-center text-xl font-semibold text-violet-300">
+                    <div 
+                        key={idx} 
+                        className="flex flex-col gap-4"
+                    >
+                        <p className="w-full text-center text-xl font-semibold text-violet-300 mb-3 relative 
+                           after:content-[''] after:block after:w-[40%] after:h-1 after:bg-gradient-to-r after:from-violet-500 after:to-fuchsia-500 
+                           after:mx-auto after:mt-2 tracking-wide uppercase transform transition-all duration-300 hover:text-white">
                             {stack.title}
                         </p>
                         <div className="w-full flex flex-wrap items-center justify-center gap-4 sm:justify-center">

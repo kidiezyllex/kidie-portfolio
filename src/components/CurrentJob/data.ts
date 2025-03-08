@@ -1,52 +1,50 @@
-
-export const currentJobsData = [
-  {
-    companyName: 'Full-time Front-End Freelancer',
-    role: 'Next.js Developer with 2 year of experience',
-    responsible: [
-      "Build website from Figma: Convert Figma design to optimized website with integrated features.",
-      "API Integration: Connect Back-End API for Client and CMS, ensuring smooth operation.",
-      "Custom Features: Develop website-specific features per customer needs.",
-      "CMS Development: Build flexible and effective CMS for Clients.",
-      "Clone Website: Replicate original website with accurate interface and features."
-    ],
-    img: '/service3.jpg',
-  },
-  {
-    companyName: 'Graduation Project/Thesis',
-    role: 'With experience of A grade in Graduation Thesis, Industrial University (IUH)',
-    responsible: [
-      "Build web apps: Develop projects with Next.js, Node.js, and TypeScript for quality and progress.",
-      "Build mobile apps: Create apps using React Native, Flutter, Dart, and TypeScript for quality and progress.",
-      "Requirements Analysis: Assess and analyze customer needs to meet project goals.",
-      "Provide documentation: Deliver reports, technical docs, and instructions."
-    ],
-    img: '/service4.jpg',
-  }
-];
-
 export const currentJobsDataVN = [
   {
     companyName: 'Freelancer Front-End toàn thời gian',
     role: 'Next.js Developer với 2 năm kinh nghiệm',
     responsible: [
-      "Xây dựng trang web từ Figma: Chuyển đổi thiết kế Figma thành trang web được tối ưu hóa với các tính năng tích hợp.",
-      "Tích hợp API: Kết nối API Back-End cho Khách hàng và CMS, đảm bảo hoạt động trơn tru.",
-      "Tính năng tùy chỉnh: Phát triển các tính năng dành riêng cho trang web theo nhu cầu của khách hàng.",
-      "Phát triển CMS: Xây dựng CMS linh hoạt và hiệu quả cho Khách hàng.",
-      "Sao chép Trang web: Sao chép trang web gốc với giao diện và tính năng chính xác."
-
+      "Cắt giao diện từ Figma/Photoshop sang HTML/CSS/React/Next.js.",
+      "Ghép API cho trang Client/CMS.",
+      "Phát triển các tính năng theo yêu cầu.",
+      "Xây dựng các Dashboard, Chart cho trang Client/CMS.",
+      "Clone website từ trang gốc với UI/UX chính xác 95%."
     ],
     img: '/service3.jpg',
   },
   {
     companyName: 'Graduation Project/Thesis',
-    role: 'Với kinh nghiệm đạt điểm A trong Luận văn tốt nghiệp, Đại học Công nghiệp (IUH)',
+    role: 'Với kinh nghiệm đạt điểm A Khoá luận/Đồ án tốt nghiệp trường Đại học Công nghiệp TP. HCM (IUH)',
     responsible: [
-      "Xây dựng ứng dụng web: Phát triển dự án bằng Next.js, Node.js và TypeScript để đảm bảo chất lượng và tiến độ.",
-      "Xây dựng ứng dụng di động: Tạo ứng dụng bằng React Native, Flutter, Dart và TypeScript để đảm bảo chất lượng và tiến độ.",
-      "Phân tích yêu cầu: Đánh giá và phân tích nhu cầu của khách hàng để đáp ứng mục tiêu của dự án.",
-      "Cung cấp tài liệu: Cung cấp báo cáo, tài liệu kỹ thuật và hướng dẫn."
+      "Nhận phát triển Đồ án ứng dụng web, sử dụng Next.js, Node.js và TypeScript.",
+      "Nhận phát triển Đồ án ứng dụng di động, sử dụng React Native, Flutter, Dart và TypeScript.",
+      "Hỗ trợ phân tích yêu cầu nghiệp vụ, tiết kế Diagram Usecase, ERD, Activity Diagram, Sequence Diagram, State Diagram, Gantt Chart, ...",
+      "Cung cấp tài liệu báo cáo, tài liệu kỹ thuật và hướng dẫn."
+    ],
+    img: '/service4.jpg',
+  }
+];
+
+export const currentJobsData = [
+  {
+    companyName: 'Full-time Freelance Front-End',
+    role: 'Next.js Developer with 2 years of experience',
+    responsible: [
+      "Convert designs from Figma/Photoshop to HTML/CSS/React/Next.js.",
+      "Integrate APIs for Client/CMS pages.",
+      "Develop features according to requirements.",
+      "Build Dashboards and Charts for Client/CMS pages.",
+      "Clone websites from original sources with 95% UI/UX accuracy."
+    ],
+    img: '/service3.jpg',
+  },
+  {
+    companyName: 'Graduation Project/Thesis',
+    role: 'With experience achieving grade A for Thesis/Graduation Project at Industrial University of Ho Chi Minh City (IUH)',
+    responsible: [
+      "Develop web application projects using Next.js, Node.js, and TypeScript.",
+      "Develop mobile application projects using React Native, Flutter, Dart, and TypeScript.",
+      "Support business requirements analysis, design Usecase Diagrams, ERD, Activity Diagrams, Sequence Diagrams, State Diagrams, Gantt Charts, etc.",
+      "Provide project reports, technical documentation, and guidance."
     ],
     img: '/service4.jpg',
   }

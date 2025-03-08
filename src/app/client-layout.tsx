@@ -5,10 +5,8 @@ import Cursor from "@/components/common/Cursor/page"
 import NavBar from "@/components/Navbar/page"
 import { AuroraHero } from "@/components/Hero/page"
 import { GridBackgroundSection } from "@/components/GridBackgroundSection/page"
-import Footer from "@/components/Footer/page"
 import { CurrentJob } from "@/components/CurrentJob/page"
 import ParticleSwarmLoader from "@/components/common/ParticleSwarmLoader/page"
-
 export default function ClientLayout({
   children,
 }: Readonly<{
@@ -18,7 +16,7 @@ export default function ClientLayout({
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoaderVisible(false)
-    }, 5000)
+    }, 4000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -41,7 +39,6 @@ export default function ClientLayout({
       <AuroraHero />
       <CurrentJob />
       <GridBackgroundSection />
-      <Footer />
     </main>
   )
 

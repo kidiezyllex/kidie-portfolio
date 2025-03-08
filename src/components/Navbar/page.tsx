@@ -1,10 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Avatar, AvatarImage } from '../ui/avatar';
 import Link from 'next/link';
 import SparklesText from '../ui/sparkles-text';
-import { Home, Layers, FolderGit2, UserSearch, GitBranch } from 'lucide-react';
+import { Home, Layers } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import PulsatingButton from '../ui/pulsating-button';
@@ -13,8 +12,6 @@ import { useLanguageStore } from '@/store/languageStore';
 import { FaLaptopCode, FaRegFaceSmileBeam } from 'react-icons/fa6';
 import { GoProject } from 'react-icons/go';
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 export default function NavBar() {
   const [itemIndex, setItemIndex] = useState(0);
@@ -89,8 +86,8 @@ export default function NavBar() {
     const { label, icon: Icon } = navItems[itemIndex];
     return (
       <div ref={itemRef} className="flex flex-row items-center gap-2">
-        <PulsatingButton className="item flex cursor-none flex-row items-center gap-2 rounded-full px-4 py-1">
-          <p className="text-xs text-nowrap font-semibold uppercase text-violet-300 sm:text-sm">
+        <PulsatingButton className="item flex cursor-none flex-row items-center gap-2 rounded-full px-3 py-1">
+          <p className="text-xs text-nowrap font-semibold uppercase text-violet-300">
             {label}
           </p>
           <Icon className="h-3 w-3 cursor-none text-violet-300 sm:h-4 sm:w-4" />

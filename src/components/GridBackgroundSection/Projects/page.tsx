@@ -47,7 +47,7 @@ export const MyProjects = () => {
               <div className="mt-16 grid h-fit w-full place-content-center bg-transparent">
                 <HoverButton
                   icon={GoProject}
-                  text={'PROJECTS PARTICIPATED'}
+                  text={'PROJECTS'}
                 ></HoverButton>
               </div>
               <ProjectCard
@@ -73,7 +73,7 @@ export const MyProjects = () => {
         <div className="mt-10 mb-4 grid h-fit w-full place-content-center bg-transparent">
           <HoverButton
             icon={GoProject}
-            text={'PROJECTS PARTICIPATED'}
+            text={'PROJECTS'}
           ></HoverButton>
         </div>
         <div className='w-full flex flex-col gap-4'>

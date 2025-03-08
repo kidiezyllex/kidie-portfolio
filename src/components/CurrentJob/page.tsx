@@ -12,13 +12,13 @@ export const CurrentJob = () => {
     const { isVietnamese } = useLanguageStore();
     const data = [
         {
-            title: isVietnamese ? "Cho khách hàng, công ty" : "For customers, companies",
+            title: isVietnamese ? "Dành cho khách hàng, công ty" : "For customers, companies",
             content: (
                 <DownloadCard data={isVietnamese ? currentJobsDataVN[0] : currentJobsData[0]} />
             ),
         },
         {
-            title: isVietnamese ? "Cho học sinh, sinh viên" : "For students",
+            title: isVietnamese ? "Dành cho học sinh, sinh viên" : "For students",
             content: (
                 <DownloadCard data={isVietnamese ? currentJobsDataVN[1] : currentJobsData[1]} />
             ),

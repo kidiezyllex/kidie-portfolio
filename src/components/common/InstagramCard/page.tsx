@@ -26,8 +26,7 @@ export function InstagramCard({
         <div
             className={cn(
                 'relative flex h-fit w-full cursor-pointer flex-col gap-2 overflow-hidden rounded-xl border p-4',
-                'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
-                'dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]',
+                'border-gray-50/[.1] bg-gray-50/[.10] hover:bg-gray-50/[.15]',
             )}
         >
             {/* Header */}
@@ -37,7 +36,7 @@ export function InstagramCard({
                     <AvatarFallback>{name.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div>
-                    <h2 className="text-sm font-semibold dark:text-violet-300">{name}</h2>
+                    <h2 className="text-sm font-semibold text-violet-300">{name}</h2>
                     <p className="text-xs text-muted-foreground">{location}</p>
                 </div>
                 <Ellipsis className="ml-auto h-4 w-4" />

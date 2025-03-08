@@ -79,23 +79,6 @@ export default function ProjectCardMobile({
               <div className="w-full flex flex-col gap-4 items-center justify-between">
                 <AvatarList data={data} />
                 <div className="flex gap-2 items-center justify-center w-full">
-                {/* <Link href={src} target="_blank" className='w-full'>
-                      <HoverBorderGradient
-                        containerClassName="rounded-full w-full h-10 flex justify-center"
-                        as="button"
-                        className="flex cursor-none items-center space-x-2 text-violet-300"
-                      >
-                        <Github className="h-4 w-4 cursor-none text-violet-300" />
-                        <p className="cursor-none text-nowrap text-sm font-medium text-violet-300">
-                          <span className="hidden text-nowrap xl:block">
-                            Source Code & Demo Video
-                          </span>
-                          <span className="block text-nowrap xl:hidden">
-                            Source
-                          </span>
-                        </p>
-                      </HoverBorderGradient>
-                    </Link> */}
                     <Link href={src} target="_blank" className="cursor-none">
                       <HoverBorderGradient
                         containerClassName="rounded-full"

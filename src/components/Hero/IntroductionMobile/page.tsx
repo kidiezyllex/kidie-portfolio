@@ -12,8 +12,9 @@ import { BorderGradientRoundedButton } from '@/components/ui/border-gradient-rou
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-
+import { useLanguageStore } from '@/store/languageStore';
 export default function IntroductionMobile() {
+    const { isVietnamese } = useLanguageStore();
     return (
         <div className="w-full h-fit flex flex-col gap-4 justify-center items-center
     relative pb-4 z-50 mt-4">
@@ -106,11 +107,11 @@ export default function IntroductionMobile() {
                 </div>
                 {/* Block 2 */}
                 <div className="h-36 flex flex-col items-center justify-center gap-2 p-2 py-1">
-                    <p className='text-white text-2xl font-bold text-center'><span className='text-[#F5A5A7] text-'>web freelancer</span> with</p>
+                    <p className='text-white text-2xl font-bold text-center'><span className='text-[#F5A5A7] text-'>web freelancer</span> {isVietnamese ? 'với:' : 'with:'}</p>
                     <div className='w-full flex gap-2 justify-center items-center'>
                         <Layers className='h-6 w-6 text-[#9595FF]' />
-                        <span className='text-white text-xl font-bold'>10+</span>
-                        <span className='text-[#9595FF] text-xl font-bold'>projects</span>
+                        <span className='text-white text-xl font-bold'>8+</span>
+                        <span className='text-[#9595FF] text-xl font-bold'>{isVietnamese ? 'dự án' : 'projects'}</span>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,5 @@ export function useIsMobile() {
     checkIsMobile(); // Kiểm tra lần đầu khi mount
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
-  // const isMobile = true
   return isMobile;
 }

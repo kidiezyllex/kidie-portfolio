@@ -5,7 +5,7 @@ import { useIsMobile } from '../../../hook/useIsMobile';
 export default function Footer() {
     const isMobile = useIsMobile()
     return (
-        <div className={`relative top-0 z-[1000] sm:h-[100vh] h-[30vh] ${isMobile ? '-mt-20' : '-mt-40'} flex sm:justify-start sm:items-start justify-center items-center`}>
+        <div className={`relative top-0 z-[1000] sm:h-[100vh] h-[30vh] ${isMobile ? '-mt-10' : '-mt-40'} flex sm:justify-start sm:items-start justify-center items-center`}>
             <Image
                 src={"/blob-scene-haikei.svg"}
                 alt="blob-background"
@@ -19,20 +19,18 @@ export default function Footer() {
                         href={''}
                         className="flex flex-row items-center justify-center gap-2 mt-4"
                     >
-                        <p className="font-[Verdana,Geneva,Tahoma,sans-serif] sm:block hidden text-center text-xl sm:text-4xl font-bold text-outline-violet leading-10 mb-1">
+                        <p className="font-[Verdana,Geneva,Tahoma,sans-serif] uppercase sm:block hidden text-center text-xl sm:text-3xl font-bold text-outline-violet leading-10 mb-1">
                             Designed and developed by me
                         </p>
-                        <div className="relative h-9 w-9 overflow-hidden rounded-full border-[4px] border-[#C4B5FD]/10">
-                            <Image
-                                src="/avatar.jpg"
-                                alt="avatar-image"
-                                className="pointer-events-none h-full w-full select-none rounded-full object-fill"
-                                width={700}
-                                height={700}
-                                draggable="false"
-                                quality={100}
-                            />
-                        </div>
+                        <div className='h-14 w-fit'>
+                <Image
+                    src={"/footer.gif"}
+                    alt="GIF"
+                    width={800}
+                    height={800}
+                    className='w-full h-full object-contain'
+                />
+            </div>
                     </Link>
                 </div>
                 <div className="flex flex-grow items-center gap-2 self-center sm:gap-4">
@@ -127,7 +125,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <p className='font-[Verdana,Geneva,Tahoma,sans-serif] text-center text-xl sm:text-4xl absolute right-16 bottom-8 text-violet-300 sm:block hidden text-outline-violet font-bold'>Thanks for scrolling 🙏</p>
+            <p className='font-[Verdana,Geneva,Tahoma,sans-serif] uppercase text-center text-xl sm:text-3xl absolute right-16 bottom-8 text-violet-300 sm:block hidden text-outline-violet font-bold'>Thanks for scrolling 🙏</p>
         </div>
     );
 }

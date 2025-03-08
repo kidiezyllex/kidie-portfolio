@@ -1,7 +1,6 @@
 'use client';
 import { instaPosts } from '../../../../lib/datas';
 import Link from 'next/link';
-import Image from 'next/image';
 import { BorderGradientIcon } from '../../ui/border-gradient-icon';
 import HoverButton from '../../ui/hover-button';
 import { AnimatedTestimonials } from '../../ui/animated-testimonials';
@@ -10,7 +9,7 @@ import { TbFileCv } from "react-icons/tb";
 
 export const AboutMe = () => {
     return (
-        <main className="section bg-transparent sm:-mt-20 -mt-12">
+        <main className="section bg-transparent sm:-mt-16 -mt-12">
             <section className="grid h-fit w-full place-content-center bg-transparent">
                 <HoverButton icon={FaRegFaceSmileBeam } text={"ABOUT ME"}></HoverButton>
             </section>

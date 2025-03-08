@@ -10,6 +10,7 @@ import { AboutMe } from './AboutMe/page';
 import { ImageScrollSection } from './ImageScrollSection/page';
 import { MyProjects } from './Projects/page';
 import { TechStack } from './TechStack/page';
+import Footer from '../Footer/page';
 const COLORS_TOP = ['#09090B', '#09090B', '#09090B', '#09090B'];
 export const GridBackgroundSection = () => {
     const color = useMotionValue(COLORS_TOP[0]);
@@ -37,6 +38,7 @@ export const GridBackgroundSection = () => {
                 <MyProjects />
                 <AboutMe />
                 <ImageScrollSection />
+                <Footer />
             </div>
         </motion.section>
     );
